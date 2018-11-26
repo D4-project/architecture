@@ -4,6 +4,7 @@
 
 | Name          | bit size  |                               Description                              |
 |---------------|-----------|:----------------------------------------------------------------------:|
+| version       | uint 8    | Version of the header                                                  |
 | type          |  uint 8   | Data encapsulated type                                                 |
 | uuid          | uint 128  | Sensor uuid                                                            |
 | timestamp     | uint 64   | Encapsulation time                                                     |
