@@ -1,14 +1,16 @@
 # D4 encapsulation protocol version 1 (DRAFT)
 
+![Overview of the D4 encapsulation protocol](https://raw.githubusercontent.com/D4-project/architecture/master/docs/diagram/d4-protocol-encapsulation.png)
+
 ## Headers
 
 | Name          | bit size  |                               Description                              |
 |---------------|-----------|:----------------------------------------------------------------------:|
 | version       | uint 8    | Version of the header                                                  |
 | type          | uint 8    | Data encapsulated type                                                 |
-| uuid          | uint 128  | Sensor uuid                                                            |
+| uuid          | uint 128  | Sensor UUID                                                            |
 | timestamp     | uint 64   | Encapsulation time                                                     |
-| hmac          | uint 256  | Header authenticated header (HMAC-SHA-256-128)                         |
+| hmac          | uint 256  | Header authentication (HMAC-SHA-256-128)                               |
 | size          | uint 32   | Payload size                                                           |
 
 ## Type
