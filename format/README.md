@@ -21,8 +21,8 @@
 | 1  | pcap (libpcap 2.4)                 |
 | 2  | meta header (JSON)                 |
 | 3  | generic log line                   |
-| 4  | dnscap output                      |
-| 5  | pcapng                             |
+| 4  | [dnscap](https://github.com/DNS-OARC/dnscap) output                      |
+| 5  | pcapng (diagnostic)                |
 | 6  | generic NDJSON or JSON Lines       |
-| 7  | generic YAF (Yet Another Flowmeter)|
+| 7  | generic [YAF](https://tools.netsa.cert.org/yaf/index.html) (Yet Another Flowmeter)|
 
