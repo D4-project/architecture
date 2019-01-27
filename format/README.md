@@ -15,6 +15,8 @@
 
 ## Type
 
+The type is the list of format encapsulated within the D4 protocol.
+
 |Type| Description |
 |----|:-----------------------------------|
 | 0  | Reserved                           |
@@ -25,4 +27,6 @@
 | 5  | pcapng (diagnostic)                |
 | 6  | generic NDJSON or JSON Lines       |
 | 7  | generic [YAF](https://tools.netsa.cert.org/yaf/index.html) (Yet Another Flowmeter)|
+
+The D4 type list is [available in JSON format](https://raw.githubusercontent.com/D4-project/architecture/master/format/type.json).
 
