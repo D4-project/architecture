@@ -33,11 +33,13 @@ The D4 type list is [available in JSON format](https://raw.githubusercontent.com
 
 ## Meta types (via meta header)
 
-Sample meta type JSON
+Sample meta type JSON (type 2). If a new session is open, before sending D4 packet type 254, a type 2 packet MUST be sent
+to describe to the D4 server how to decode packets. A meta header payload contains a single JSON object which describes
+the next packet to be decoded as type 254 in the stream. The JSON object MUST at least contain a `type` field.
 
 ~~~~json
 {
-  "type": "1337",
+  "type": "ja3-jl",
   "encoding": "utf-8",
   "tags": [
     "tlp:white"
@@ -48,13 +50,6 @@ Sample meta type JSON
 
 |Type| Description |
 |----|:-----------------------------------|
-| 0  | Reserved                           |
-| 1  | pcap (libpcap 2.4)                 |
-| 2  | Reserved                           |
-| 3  | generic log line                   |
-| 4  | [dnscap](https://github.com/DNS-OARC/dnscap) output                      |
-| 5  | pcapng (diagnostic)                |
-| 6  | generic NDJSON or JSON Lines       |
-| 7  | generic [YAF](https://tools.netsa.cert.org/yaf/index.html) (Yet Another Flowmeter)|
-| 254 | Reserved |
-| 1337 |  ja3-jl                          |
+| ja3-jl  | JA3 fingerprinting JL version |
+| d4-telemetry | D4 project sensor telemetry |
+| fascia       | fascia JSON object |
