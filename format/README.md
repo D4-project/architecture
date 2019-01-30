@@ -27,6 +27,7 @@ The type is the list of format encapsulated within the D4 protocol.
 | 5  | pcapng (diagnostic)                |
 | 6  | generic NDJSON or JSON Lines       |
 | 7  | generic [YAF](https://tools.netsa.cert.org/yaf/index.html) (Yet Another Flowmeter)|
+| 8  | [passivedns](https://github.com/gamelinux/passivedns) CSV stream |
 | 254 | type defined by meta header (type 2) |
 
 The D4 type list is [available in JSON format](https://raw.githubusercontent.com/D4-project/architecture/master/format/type.json).
