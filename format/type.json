@@ -32,5 +32,10 @@
     "type": 7,
     "description": "generic YAF (Yet Another Flowmeter)",
     "ref": "https://tools.netsa.cert.org/yaf/index.html"
+  },
+  {
+    "type": 8,
+    "description": "passivedns CSV stream",
+    "ref": "https://github.com/gamelinux/passivedns"
   }
 ]
