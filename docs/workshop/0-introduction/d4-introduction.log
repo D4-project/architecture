@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.13)  4 FEB 2019 22:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.13)  4 FEB 2019 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1291,7 +1291,7 @@ Overfull \hbox (19.37505pt too wide) in paragraph at lines 99--99
 
 ]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 128.
+(Font)              scaled to size 10.0pt on input line 130.
  (./meta.tex
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 3.
@@ -1305,7 +1305,7 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 157.
+(Font)              scaled to size 12.0pt on input line 159.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -1318,6 +1318,31 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 
 ] (./d4-client.tex) [14
 
+] [15
+
+]
+Missing character: There is no s in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 4 in font nullfont!
+
+Underfull \hbox (badness 1320) in paragraph at lines 249--249
+ []|\T1/FiraSans-OsF/m/sc/14.4 Observing SYN floods at-tacks in backscat-ter 
+ []
+
+[16
+
+] [17
+
+] (./flags.tex) [18
+
+] (./pibs.tex) [19
+
 ]
 \tf@nav=\write7
 \openout7 = `d4-introduction.nav'.
@@ -1328,33 +1353,36 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 \tf@snm=\write9
 \openout9 = `d4-introduction.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
  (./d4-introduction.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
 Package rerunfilecheck Info: File `d4-introduction.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25465 strings out of 492982
- 512350 string characters out of 6134895
- 651280 words of memory out of 5000000
- 28407 multiletter control sequences out of 15000+600000
- 324501 words of font info for 85 fonts, out of 8000000 for 9000
+ 25611 strings out of 492982
+ 514988 string characters out of 6134895
+ 651424 words of memory out of 5000000
+ 28536 multiletter control sequences out of 15000+600000
+ 324948 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,16n,99p,821b,1405s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fira/fir_765q6w.enc}{/usr/shar
-e/texlive/texmf-dist/fonts/enc/dvips/fira/fir_xbqiro.enc}{/usr/share/texlive/te
-xmf-dist/fonts/enc/dvips/fira/fir_7gpamp.enc}</usr/share/texlive/texmf-dist/fon
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fira/fir_7gpamp.enc}{/usr/shar
+e/texlive/texmf-dist/fonts/enc/dvips/fira/fir_765q6w.enc}{/usr/share/texlive/te
+xmf-dist/fonts/enc/dvips/fira/fir_xbqiro.enc}</usr/share/texlive/texmf-dist/fon
 ts/type1/public/fira/FiraMono-Regular.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/fira/FiraSans-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/fira/FiraSans-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb>
-Output written on d4-introduction.pdf (14 pages, 525439 bytes).
+public/fira/FiraSans-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/fira/FiraSans-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb>
+Output written on d4-introduction.pdf (19 pages, 600379 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
+ 200 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

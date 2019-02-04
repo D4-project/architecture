@@ -123,16 +123,18 @@
 \begin{frame}
     \frametitle{D4 meta header}
     \framesubtitle{Meta types}
+        D4 header includes an easy way to {\bf extend the protocol} (via type 2) without altering the format. Within a D4 session, the initial D4 packet(s) type 2 defines
+        the custom headers and then the following packets with type 254 is the custom data encapsulated.
     \small
     \input{meta.tex}
 \end{frame}
-
 
 \begin{frame}
         \frametitle{}
 {\center Use-case: migrating a legacy network capture model into a D4 network sensor
 }
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Remote network capture}
@@ -202,6 +204,106 @@
         snaplen & length of data being read \& written\\
     \end{tabular}
 \end{block}
+\end{frame}
+
+\begin{frame}
+        \frametitle{}
+{\center Use-case: D4 analyzer to detect DDoS attacks in backscatter traffic
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Observing SYN floods attacks in backscatter traffic}
+Attack description
+    \begin{tikzpicture}{scale=0.4}
+    \node[rectangle,draw,fill=red!80] (a) at (0,0) {Attacker};
+    \node[anchor=west] at (0.93,0.25) {Spoofed requests $H_{0},H_{1},H_{2},H_{3},...$};
+    \node [rectangle,draw,fill=blue!25,anchor=east] at (8,0) (v) {Victim};
+    \draw [->](a) --(v);
+    \foreach \x in {0,1,2,3} {
+        \node [rectangle,draw,fill=green!25,anchor=east] at (\x*2+1,-2) {$H_{\x}$};
+        %Horizontal lines
+        \draw (\x*2+1, -\x*0.25-0.5)--(7.0+\x*.25,-\x*0.25-0.5);
+        %Links to the victim
+        \draw (7.0+\x*.25,-\x*0.25-0.5) -- (7.0+\x*.25,-0.25);
+        %Links to hosts
+        \draw[->] (\x*2+1, -\x*0.25-0.5)--(\x*2+1,-1.70);
+    }
+    \end{tikzpicture}
+
+\begin{center}
+    \begin{tabular}{|l|}
+        \hline
+        Connections\\
+        \hline
+        $H_{0}$\\
+        \hline
+        $H_{1}$\\
+        \hline
+        $H_{2}$\\
+        \hline
+        $H_{3}$\\
+        \hline
+    \end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{What can be derived from backscatter traffic?}
+
+\begin{itemize}
+    \item External point of view on ongoing denial of service attacks
+    \item Confirm if there is a DDoS attack
+    \item Recover time line of attacked targets
+    \item Confirm which services are a target (DNS, webserver, $\dots$)
+    \item Infrastructure changes or updates
+    \item Assess the state of an infrastructure under denial of service attack
+    \begin{itemize}
+        \item Detect failure/addition of intermediate network equipments, firewalls, proxy servers etc
+        \item Detect DDoS mitigation devices or services
+    \end{itemize}
+    \item Create probabilistic models of denial of service attacks
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Confirm if there is a DDOS attack}
+    \begin{block}{Problem}
+        \begin{itemize}
+            \item Distinguish between compromised infrastructure and backscatter
+            \item Look at TCP flags $\to$ filter out single SYN flags
+            \item Focus on ACK, SYN/ACK, ...
+            \item Do not limit to SYN/ACK or ACK $\to$ ECE (ECN Echo)\footnote{\url{https://tools.ietf.org/html/rfc3168}}
+        \end{itemize}
+    \end{block}
+    \input{flags.tex}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Passive Identification of Backscatter (WiP)}
+ \lstset{%
+        language=bash,
+        backgroundcolor=\color{gray!25},
+        basicstyle=\ttfamily,
+        breaklines=true,
+        columns=fullflexible
+    }
+\input{pibs.tex}
+\begin{tabular}{l|l}
+Options & Explanations\\
+\hline
+-r & read pcap file\\
+-b & display IPs under DDoS on standard output\\
+\end{tabular}
+
+
+\begin{tabular}{l}
+	Dependencies\\
+	\hline
+	libwiretap-dev\\
+	libhiredis-dev\\
+	libwsutil-dev\\
+\end{tabular}
 \end{frame}
 
 
