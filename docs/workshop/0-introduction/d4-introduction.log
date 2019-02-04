@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.13)  4 FEB 2019 20:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.13)  4 FEB 2019 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,39 +853,163 @@ mer.sty)
 \focus@pbar@height=\skip57
 \focus@pbar@leftoffset=\skip58
 \focus@pbar@rightoffset=\skip59
-)) (./d4-introduction.aux)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.5)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.callouts.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.callouts.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
+\pgfnodepartlowerbox=\box58
+\pgfnodeparttwobox=\box59
+\pgfnodepartthreebox=\box60
+\pgfnodepartfourbox=\box61
+\pgfnodeparttwentybox=\box62
+\pgfnodepartnineteenbox=\box63
+\pgfnodeparteighteenbox=\box64
+\pgfnodepartseventeenbox=\box65
+\pgfnodepartsixteenbox=\box66
+\pgfnodepartfifteenbox=\box67
+\pgfnodepartfourteenbox=\box68
+\pgfnodepartthirteenbox=\box69
+\pgfnodeparttwelvebox=\box70
+\pgfnodepartelevenbox=\box71
+\pgfnodeparttenbox=\box72
+\pgfnodepartninebox=\box73
+\pgfnodeparteightbox=\box74
+\pgfnodepartsevenbox=\box75
+\pgfnodepartsixbox=\box76
+\pgfnodepartfivebox=\box77
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen257
+)) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/transparent.sty
+Package: transparent 2016/05/16 v1.1 Transparency via pdfTeX's color stack (HO)
+
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count164
+\FV@InFile=\read2
+\FV@TabBox=\box78
+\c@FancyVerbLine=\count165
+\FV@StepNumber=\count166
+\FV@OutFile=\write5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count167
+\lst@gtempboxa=\box79
+\lst@token=\toks47
+\lst@length=\count168
+\lst@currlwidth=\dimen258
+\lst@column=\count169
+\lst@pos=\count170
+\lst@lostspace=\dimen259
+\lst@width=\dimen260
+\lst@newlines=\count171
+\lst@lineno=\count172
+\lst@maxwidth=\dimen261
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count173
+\lst@skipnumbers=\count174
+\lst@framebox=\box80
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(./d4-introduction.aux)
 \openout1 = `d4-introduction.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 23.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Try loading font information for T1+FiraSans-OsF on input l
-ine 17.
-
-(/usr/share/texlive/texmf-dist/tex/latex/fira/T1FiraSans-OsF.fd
+ine 23.
+ (/usr/share/texlive/texmf-dist/tex/latex/fira/T1FiraSans-OsF.fd
 File: T1FiraSans-OsF.fd 2018/01/09 (autoinst) Font definitions for T1/FiraSans-
 OsF.
 )
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 17.
+(Font)              scaled to size 10.95pt on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -923,17 +1047,17 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count164
-\scratchdimen=\dimen257
-\scratchbox=\box58
-\nofMPsegments=\count165
-\nofMParguments=\count166
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count167
-\MPscratchDim=\dimen258
-\MPnumerator=\count168
-\makeMPintoPDFobject=\count169
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count175
+\scratchdimen=\dimen262
+\scratchbox=\box81
+\nofMPsegments=\count176
+\nofMParguments=\count177
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count178
+\MPscratchDim=\dimen263
+\MPnumerator=\count179
+\makeMPintoPDFobject=\count180
+\everyMPtoPDFconversion=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -952,8 +1076,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 17.
+\AtBeginShipoutBox=\box82
+Package hyperref Info: Link coloring OFF on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -961,71 +1085,71 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count170
+\c@section@level=\count181
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
 
 (./d4-introduction.out) (./d4-introduction.out)
-\@outlinefile=\write5
-\openout5 = `d4-introduction.out'.
+\@outlinefile=\write6
+\openout6 = `d4-introduction.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 17.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 23.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 17.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 23.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 17.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 17.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 23.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/FiraSans-OsF/bx/n on input line 17.
+(Font)                  OT1/cmr/bx/n --> T1/FiraSans-OsF/bx/n on input line 23.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/FiraSans-OsF/bx/n on input line 17.
+(Font)                  OT1/cmr/bx/n --> T1/FiraSans-OsF/bx/n on input line 23.
 
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/FiraSans-OsF/m/n on input line 17.
+(Font)                  OT1/cmss/m/n --> T1/FiraSans-OsF/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/FiraSans-OsF/m/n on input line 17.
+(Font)                  OT1/cmss/bx/n --> T1/FiraSans-OsF/m/n on input line 23.
 
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/FiraSans-OsF/m/it on input line 17.
+(Font)                  OT1/cmr/m/it --> T1/FiraSans-OsF/m/it on input line 23.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/FiraSans-OsF/m/it on input line 17
+(Font)                  OT1/cmr/bx/it --> T1/FiraSans-OsF/m/it on input line 23
 .
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/FiraMono-TOsF/m/n on input line 17.
+(Font)                  OT1/cmtt/m/n --> T1/FiraMono-TOsF/m/n on input line 23.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/FiraMono-TOsF/m/n on input line 17.
+(Font)                  OT1/cmtt/m/n --> T1/FiraMono-TOsF/m/n on input line 23.
 
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 (Font)                  T1/FiraSans-OsF/m/n --> T1/FiraSans-OsF/bx/n on input l
-ine 17.
+ine 23.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  T1/FiraSans-OsF/m/it --> T1/FiraSans-OsF/bx/it on input
- line 17.
+ line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 17.
+(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  T1/FiraSans-OsF/bx/n --> T1/FiraSans-OsF/bx/n on input 
-line 17.
+line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  T1/FiraSans-OsF/m/n --> T1/FiraSans-OsF/bx/n on input l
-ine 17.
+ine 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  T1/FiraSans-OsF/m/it --> T1/FiraSans-OsF/bx/it on input
- line 17.
+ line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  T1/FiraMono-TOsF/m/n --> T1/FiraMono-TOsF/bx/n on input
- line 17.
+ line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1051,114 +1175,186 @@ Dictionary: translator-numbers-dictionary, Language: English
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@mv@tabular=\count171
-\c@mv@boldtabular=\count172
+\c@mv@tabular=\count182
+\c@mv@boldtabular=\count183
+\c@lstlisting=\count184
  (./d4-introduction.nav)
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 17.
+(Font)              scaled to size 6.0pt on input line 23.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 17.
+(Font)              scaled to size 8.0pt on input line 23.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 20.74pt on input line 20.
+(Font)              scaled to size 20.74pt on input line 26.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' will be
-(Font)              scaled to size 20.74pt on input line 20.
+(Font)              scaled to size 20.74pt on input line 26.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 20.
+(Font)              scaled to size 14.4pt on input line 26.
 <d4-logo.pdf, id=13, 646.06181pt x 594.25443pt>
 File: d4-logo.pdf Graphic file (type pdf)
 <use d4-logo.pdf>
-Package pdftex.def Info: d4-logo.pdf  used on input line 20.
+Package pdftex.def Info: d4-logo.pdf  used on input line 26.
 (pdftex.def)             Requested size: 129.21007pt x 118.84877pt.
 LaTeX Font Info:    Try loading font information for T1+FiraMono-TOsF on input 
-line 20.
+line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fira/T1FiraMono-TOsF.fd
 File: T1FiraMono-TOsF.fd 2015/05/23 (autoinst) Font definitions for T1/FiraMono
 -TOsF.
 )
 LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 20.
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+(Font)              scaled to size 10.95pt on input line 26.
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 10.95pt on input line 20.
+(Font)              scaled to size 10.95pt on input line 26.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 20.
+(Font)              scaled to size 8.0pt on input line 26.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 6.0pt on input line 20.
+(Font)              scaled to size 6.0pt on input line 26.
 
-Overfull \vbox (73.12874pt too high) detected at line 20
+Overfull \vbox (73.12874pt too high) detected at line 26
  []
 
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 4.0pt on input line 20.
+(Font)              scaled to size 4.0pt on input line 26.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./d4-logo.pdf>]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 33.
+(Font)              scaled to size 10.95pt on input line 37.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 33.
+(Font)              scaled to size 14.4pt on input line 37.
  [2
 
 ]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 46.
+(Font)              scaled to size 9.0pt on input line 52.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 46.
+(Font)              scaled to size 5.0pt on input line 52.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 46.
+(Font)              scaled to size 9.0pt on input line 52.
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
-(Font)              scaled to size 5.0pt on input line 46.
+(Font)              scaled to size 5.0pt on input line 52.
 LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 46.
+(Font)              scaled to size 9.0pt on input line 52.
 
 [3
 
+] [4
+
 ]
-\tf@nav=\write6
-\openout6 = `d4-introduction.nav'.
+<d4-overview.pdf, id=51, 844.15375pt x 598.235pt>
+File: d4-overview.pdf Graphic file (type pdf)
+<use d4-overview.pdf>
+Package pdftex.def Info: d4-overview.pdf  used on input line 67.
+(pdftex.def)             Requested size: 320.78175pt x 227.33165pt.
 
-\tf@toc=\write7
-\openout7 = `d4-introduction.toc'.
+Overfull \vbox (3.87543pt too high) detected at line 67
+ []
 
-\tf@snm=\write8
-\openout8 = `d4-introduction.snm'.
+[5
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
+ <./d4-overview.pdf
+
+pdfTeX warning: pdflatex (file ./d4-overview.pdf): PDF inclusion: invalid other
+ resource which is no dict (key 'ProcSets', type <array>); ignored.
+>] [6
+
+]
+<d4-protocol-encapsulation.png, id=84, 844.756pt x 597.432pt>
+File: d4-protocol-encapsulation.png Graphic file (type png)
+<use d4-protocol-encapsulation.png>
+Package pdftex.def Info: d4-protocol-encapsulation.png  used on input line 83.
+(pdftex.def)             Requested size: 321.01062pt x 227.02652pt.
+
+Overfull \vbox (3.5703pt too high) detected at line 83
+ []
+
+[7
+
+ <./d4-protocol-encapsulation.png>]
+Overfull \hbox (19.37505pt too wide) in paragraph at lines 99--99
+[][]  
+ []
+
+[8
+
+] [9
+
+]
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 128.
+ (./meta.tex
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 3.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 3.
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
+(Font)              scaled to size 7.0pt on input line 3.
+) [10
+
+] [11
+
+]
+LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 157.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (./tcpdump.tex) [12
+
+] [13
+
+] (./d4-client.tex) [14
+
+]
+\tf@nav=\write7
+\openout7 = `d4-introduction.nav'.
+
+\tf@toc=\write8
+\openout8 = `d4-introduction.toc'.
+
+\tf@snm=\write9
+\openout9 = `d4-introduction.snm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 208.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 208.
  (./d4-introduction.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 208.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 208.
 Package rerunfilecheck Info: File `d4-introduction.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21222 strings out of 492982
- 415420 string characters out of 6134895
- 472571 words of memory out of 5000000
- 24274 multiletter control sequences out of 15000+600000
- 248827 words of font info for 71 fonts, out of 8000000 for 9000
+ 25465 strings out of 492982
+ 512350 string characters out of 6134895
+ 651280 words of memory out of 5000000
+ 28407 multiletter control sequences out of 15000+600000
+ 324501 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,16n,83p,821b,829s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,16n,99p,821b,1405s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/fira/fir_765q6w.enc}{/usr/shar
 e/texlive/texmf-dist/fonts/enc/dvips/fira/fir_xbqiro.enc}{/usr/share/texlive/te
 xmf-dist/fonts/enc/dvips/fira/fir_7gpamp.enc}</usr/share/texlive/texmf-dist/fon
 ts/type1/public/fira/FiraMono-Regular.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/fira/FiraSans-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/fira/FiraSans-Regular.pfb>
-Output written on d4-introduction.pdf (3 pages, 258733 bytes).
+public/fira/FiraSans-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb>
+Output written on d4-introduction.pdf (14 pages, 525439 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
