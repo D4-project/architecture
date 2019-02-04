@@ -10,7 +10,7 @@
 | type          | uint 8    | Data encapsulated type                                                 |
 | uuid          | uint 128  | Sensor UUID                                                            |
 | timestamp     | uint 64   | Encapsulation time                                                     |
-| hmac          | uint 256  | Header authentication (HMAC-SHA-256-128)                               |
+| hmac          | uint 256  | Authentication header (HMAC-SHA-256-128)                               |
 | size          | uint 32   | Payload size                                                           |
 
 ## Types
