@@ -130,6 +130,15 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{D4-core server}
+   \begin{itemize}
+           \item D4 core server\footnote{\url{https://github.com/D4-project/d4-core}} is a complete server to handle clients (sensors) including the decapsulation of the D4 protocol, control of sensor registrations, management of decoding protocols and dispatching to adequate decoders/analysers.
+           \item D4 server is written in Python 3.6 and runs on standard GNU/Linux distribution.
+   \end{itemize}
+\end{frame}
+
+
+\begin{frame}
         \frametitle{}
 {\center Use-case: migrating a legacy network capture model into a D4 network sensor
 }
@@ -267,7 +276,7 @@ Attack description
 \end{frame}
 
 \begin{frame}
-    \frametitle{Confirm if there is a DDOS attack}
+    \frametitle{Confirm if there is/was a DDoS attack}
     \begin{block}{Problem}
         \begin{itemize}
             \item Distinguish between compromised infrastructure and backscatter
@@ -288,7 +297,9 @@ Attack description
         breaklines=true,
         columns=fullflexible
     }
-\input{pibs.tex}
+        \input{pibs.tex}
+        Early version is available of PIBS\footnote{\url{https://github.com/D4-project/analyzer-d4-pibs}}
+        with a focus on TCP traffic.
 \begin{tabular}{l|l}
 Options & Explanations\\
 \hline
