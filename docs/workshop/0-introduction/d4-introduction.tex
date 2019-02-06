@@ -137,10 +137,80 @@
    \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{D4 server handling}
+
+D4 server reconstructs the encapsulated stream from the D4 sensor and saves it in a Redis stream.
+
+\begin{itemize}
+\item Support TLS connection
+\item Unpack D4 header
+\item Verify client secret key (HMAC)
+\item check blocklist
+\item Filter by types (Only accept one connection by type-UUID - except: type 254)
+\item Discard incorrect data
+\item Save data in a Redis Stream (unique for each session)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - worker handler}
+After the stream is processed depending of the type using dedicated worker.
+        \begin{itemize}
+        \item Worker Manager (one by type)
+                \begin{itemize}
+                \item Check if a new session is created and valid data are saved in a Redis stream
+                \item Launch a new Worker for each session
+                \end{itemize}
+        \item Worker
+                \begin{itemize}
+                 \item Get data from a stream
+    		     \item Reconstruct data
+                 \item Save data on disk (with file rotation)
+                 \item Save data in Redis. Create a queue for D4 Analyzer(s)
+                \end{itemize}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - management interface}
+The D4 server provides a web interface to manage D4 sensors, sessions and analyzer.
+        \begin{itemize}
+\item Get Sensors status, errors and statistics
+\item Get all connected sensors
+\item Manage Sensors (stream size limit, secret key, ...)
+\item Manage Accepted types
+\item UUID/IP blocklist
+\item  Create Analyzer Queues
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - main interface}
+        \includegraphics[scale=0.18]{d4-4.png}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - server management}
+        \includegraphics[scale=0.18]{d4-3.png}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - sensor overview}
+        \includegraphics[scale=0.18]{d4-1.png}
+\end{frame}
+
+
+\begin{frame}
+        \frametitle{D4 server - sensor management}
+        \includegraphics[scale=0.18]{d4-2.png}
+\end{frame}
+
+
 
 \begin{frame}
         \frametitle{}
-{\center Use-case: migrating a legacy network capture model into a D4 network sensor
+        {\center Use-case: migrating a legacy network capture model into a D4 network sensor
 }
 \end{frame}
 
