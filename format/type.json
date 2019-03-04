@@ -22,7 +22,7 @@
   },
   {
     "type": 5,
-    "description": "pcapng (diagnostic"
+    "description": "pcapng (diagnostic)"
   },
   {
     "type": 6,
@@ -37,5 +37,9 @@
     "type": 8,
     "description": "passivedns CSV stream",
     "ref": "https://github.com/gamelinux/passivedns"
+  },
+  {
+    "type": 254,
+    "description": "type defined by meta header (type2)"
   }
 ]
