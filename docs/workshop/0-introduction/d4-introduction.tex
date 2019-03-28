@@ -18,7 +18,7 @@
 \author{Alexandre Dulaunoy - Sami Mokaddem}
 \titlegraphic{\includegraphics[scale=0.20]{d4-logo.pdf}}
 \institute{Team CIRCL \\ \url{https://www.d4-project.org/}}
-\date{20190207}
+\date{2019/03/29}
 
 \begin{document}
     \begin{frame}
@@ -173,6 +173,23 @@ After the stream is processed depending of the type using dedicated worker.
 \end{frame}
 
 \begin{frame}
+        \frametitle{D4 server - type 254 worker handler}
+        \begin{itemize}
+        \item Worker 2
+                \begin{itemize}
+                \item Get type 2 data from a stream
+    		        \item Reconstruct Json
+                \item Extract extended type name
+                \item Use default type or special extended handler
+                \item Save Json on disk
+                \item Get type 254 data from a stream
+                \item Reconstruct type 254
+                \item Save data in Redis. Create a queue for D4 Analyzer(s)
+                \end{itemize}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
         \frametitle{D4 server - management interface}
 The D4 server provides a web interface to manage D4 sensors, sessions and analyzer.
         \begin{itemize}
@@ -187,7 +204,12 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
 
 \begin{frame}
         \frametitle{D4 server - main interface}
-        \includegraphics[scale=0.18]{d4-4.png}
+        \includegraphics[scale=0.18]{d4-5.png}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - server management}
+        \includegraphics[scale=0.18]{d4-2.png}
 \end{frame}
 
 \begin{frame}
@@ -203,7 +225,7 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
 
 \begin{frame}
         \frametitle{D4 server - sensor management}
-        \includegraphics[scale=0.18]{d4-2.png}
+        \includegraphics[scale=0.18]{d4-4.png}
 \end{frame}
 
 
