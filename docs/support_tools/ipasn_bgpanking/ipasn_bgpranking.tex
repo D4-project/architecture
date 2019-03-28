@@ -1,0 +1,138 @@
+% Full instructions available at:
+% https://github.com/elauksap/focus-beamertheme
+
+\documentclass{beamer}
+\usetheme[numbering=progressbar]{focus}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,arrows}
+\usepackage{transparent}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\definecolor{main}{RGB}{47, 161, 219}
+%\definecolor{textcolor}{RGB}{128, 128, 128}
+\definecolor{background}{RGB}{240, 247, 255}
+\definecolor{textcolor}{RGB}{85, 87, 83}
+\title{D4 Project}
+\subtitle{IPASN History and BGPRanking}
+\author{Raphaël Vinot}
+\titlegraphic{\includegraphics[scale=0.20]{d4-logo.pdf}}
+\institute{Team CIRCL \\ \url{https://www.d4-project.org/}}
+\date{20190328}
+
+\begin{document}
+    \begin{frame}
+        \maketitle
+    \end{frame}
+
+\begin{frame}
+    \frametitle{IPASN History - Problem statement}
+    \begin{itemize}
+        \item Rapidely figuring out the owner of a specific IP address is a common problem
+        \item Resolving that relationship for a massive amount of IP addresses at scale is a medium hard problem
+        \item Doing so for a specific day in the past is somewhat more difficult
+        \item Comparing the resolution across sources is pretty painful
+        \item Doing all that together is pretty much a pain
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{IPASN History - Objective}
+ \begin{itemize}
+         \item Fast, scalable, flexible framework to load multiple data sources of BGP announcements
+         \item Flexible configuration of the size of the history to keep in memory
+         \item Fire and forget model
+         \item Simple REST API
+         \item Even simpler Python client and API
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{IPASN History - (short) History}
+ \begin{itemize}
+        \item D4 Project (co-funded under INEA CEF EU program) started - 1st November 2018
+        \item A PoC of IPASN History was initially developped in 2012-2013 and only supported IPv4
+        \item Was used in production for BGP Ranking over many years
+        \item The current version was released initially in November 2018 after a complete rewrite
+        \item The support of multiple data source was added in March 2019
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{IPASN History - Current status}
+    \begin{itemize}
+        \item Supports Caida and RIPE as data sources
+        \item Supports requests for IPv4 and IPv6
+        \item Python3 module
+        \item Simple REST API
+        \item Used in production in the new version of BGP Ranking
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{BGP Ranking - Problem statement}
+    \begin{itemize}
+        \item There are 10th of thousands of actors on the internet owning IP Addresses
+        \item Many of them own a very small amount of IP addresses (/24)
+        \item They change nem, purposes and owner relatively often
+        \item Their security practicies are poor, if they ever exist
+        \item They are plain malicious and have no legitimate purpose
+        \item One way to find these malicious providers is to map them to lists of known malicious IPs
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{BGP Ranking - Objective}
+ \begin{itemize}
+         \item Daily ranking of internet profiders by maliciousness
+         \item History of said rankings over a long period of time
+         \item Fire and forget model
+         \item Simple REST API
+         \item Even simpler Python client and API
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{BGP Ranking - (short) History}
+ \begin{itemize}
+        \item D4 Project (co-funded under INEA CEF EU program) started - 1st November 2018
+        \item A PoC of BGP Ranking was initially developped in the early 2010s and only supported IPv4
+        \item The current version was released initially in November 2018 after a complete rewrite
+        \item The integration with IPASN HIstory was finalized in February 2019
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{IPASN History - Current status}
+    \begin{itemize}
+        \item The public instance automatically loads a couple dozen of publicly available lists of known malicious IPs
+        \item Supports the ShadowServer data (requires an account from Shadow Server)
+        \item Supports IPv4 and IPv6 lists
+        \item Python3 module
+        \item Simple REST API
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{IPASN History \& BGP Ranking}
+    \begin{itemize}
+        \item IPASN History source code: \url{https://github.com/D4-project/IPASN-History}
+        \item IPASN History Query interface over BGP Ranking: \url{https://bgpranking-ng.circl.lu/ipasn}
+        \item BGP Ranking source code: \url{https://github.com/D4-project/BGP-Ranking}
+        \item BGP Ranking interface: \url{https://bgpranking-ng.circl.lu/}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Get in touch if you want to join the project, host a sensor or contribute}
+\begin{itemize}
+\item Collaboration can include research partnership, sharing of collected streams or improving the software.
+\item Contact: info@circl.lu
+\item \url{https://github.com/D4-Project} -  \url{https://twitter.com/d4_project}
+\end{itemize}
+\end{frame}
+
+\end{document}
