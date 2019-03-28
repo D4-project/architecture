@@ -62,4 +62,22 @@
         \end{verbatim}
     \end{block}
 \end{frame}
+
+\begin{frame}
+    \frametitle{Using PIBS as D4 analyzer}
+    \begin{itemize}
+        \item Chaining PIBS to D4 server
+        \item PIBS polls a redis queue for new created files
+        \item Each PIBS instance can have its UUID
+    \end{itemize}
+    \begin{block}{PIBS tool}
+        pibs -u e344c4fb-442e-45a6-92b9-d8e30aeef448 -z 127.0.0.1 -p 6379 -y 2
+    \end{block}
+    \begin{itemize}
+        \item -u specifies uuid
+        \item -z specifies the redis server
+        \item -p specifies the port of the redis server
+        \item -y specifies the redis database
+    \end{itemize}
+\end{frame}
 \end{document}
