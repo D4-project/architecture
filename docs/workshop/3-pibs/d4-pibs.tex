@@ -46,4 +46,20 @@
     \end{itemize}
 \end{frame}
 
+
+\begin{frame}[fragile]
+    \frametitle{Handling TCP SYN scans}
+    \begin{itemize}
+        \item Was the IP seen before?
+        \item Keep a hash table of all encountered IP addresses
+        \item Consider only IP addresses where the TCP SYN flag is set
+        \item Insert the IP and the timestamp in the hash table
+        \item Display new IP addresses
+    \end{itemize}
+    \begin{block}{PIBS tool}
+        \begin{verbatim}
+            pibs -r pcapfile.cap -b
+        \end{verbatim}
+    \end{block}
+\end{frame}
 \end{document}
