@@ -80,4 +80,16 @@
         \item -y specifies the redis database
     \end{itemize}
 \end{frame}
+
+\begin{frame}
+    \frametitle{Using PIBS for further exploration}
+    \begin{itemize}
+        \item Often it is unknown which fields should be analysed during refinement
+        \item Read raw pcap and output raw pcap
+        \item Output pcap file can be further investigated with other tools such as Wireshark
+    \end{itemize}
+    \begin{block}{PIBS tool}
+        pibs -r source.cap.gz -w backscatter.cap
+    \end{block}
+\end{frame}
 \end{document}
