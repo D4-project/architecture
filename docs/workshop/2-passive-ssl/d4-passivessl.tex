@@ -139,7 +139,7 @@ Depends on libpcap.
 
 
 \begin{frame}[fragile]
-        \frametitle{sensor-d4-tls-fingerprinting - d4 client} 
+        \frametitle{sensor-d4-tls-fingerprinting | d4 client} 
         Required setting:
         \begin{itemize}
         \item type should be set to 2 or 254
@@ -164,7 +164,7 @@ Depends on libpcap.
 \end{frame}
 
 \begin{frame}[fragile]
-        \frametitle{sensor-d4-tls-fingerprinting - d4 worker} 
+        \frametitle{sensor-d4-tls-fingerprinting - ja3-jl worker} 
         \input{worker.tex}
         \begin{itemize}
           \item processes each reassembled JSON description,
@@ -175,24 +175,26 @@ Depends on libpcap.
 \end{frame}
 
 \begin{frame}[fragile]
-        \frametitle{sensor-d4-tls-fingerprinting - d4 analyzer} 
-        (Proof of Concept)
+        \frametitle{sensor-d4-tls-fingerprinting - ja3-jl analyzer} 
+        (Proof of Concept) \\
+        \vspace{.8cm} 
+        Populates a database:
         \begin{itemize}
           \item LPOP a redis list populated by the worker
-          \item dumbly push JSON description into a postgres database
+          \item push JSON descriptions into a postgres database
         \end{itemize}
 \end{frame}
 
 
 \begin{frame}[fragile]
-        \frametitle{sensor-d4-tls-fingerprinting - d4 passivessl API} 
-        (Proof of Concept)
-        
+        \frametitle{sensor-d4-tls-fingerprinting - passivessl API} 
+        (Proof of Concept) \\
+        \vspace{.8cm} 
         Exposes a REST API to query the collected data:
         \begin{itemize}
-          \item /index : returns, the full DB :)
-          \item /ja3/ : returns, all TLS sessions with a given JA3 Signature
-          \item /ja3s/ : returns, all TLS sessions with a given JA3S Signature
+          \item /index : returns the full DB (PoC), 
+          \item /ja3/ : returns all TLS sessions with a given JA3 Signature,
+          \item /ja3s/ : returns all TLS sessions with a given JA3S Signature,
         \end{itemize}
 \end{frame}
 
