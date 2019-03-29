@@ -1,0 +1,11 @@
+\begin{lstlisting}
+    def __init__(self, uuid, json_file):
+        super().__init__(uuid, json_file)
+        self.set_rotate_file_mode(False)
+
+    def process_data(self, data):
+        self.reconstruct_data(data)
+
+    def handle_reconstructed_data(self, data):
+        ...
+\end{lstlisting}
