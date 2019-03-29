@@ -9,6 +9,7 @@
 \usepackage{transparent}
 \usepackage{fancyvrb}
 \usepackage{listings}
+\usepackage{csquotes}
 \definecolor{main}{RGB}{47, 161, 219}
 %\definecolor{textcolor}{RGB}{128, 128, 128}
 \definecolor{background}{RGB}{240, 247, 255}
@@ -36,11 +37,12 @@
         \frametitle{A passive SSL fingerprinter}
         CSIRT's rationale for collecting TLS handshakes:
         \begin{itemize}
-          \item Pivot on additional data points
-          \item Find owners of IP addresses
-          \item Detect usage of CIDR blocks
-          \item Detect vulnerable systems
-          \item Detect compromised services
+          \item pivot on additional data points,
+          \item find owners of IP addresses,
+          \item detect usage of CIDR blocks,
+          \item detect vulnerable systems,
+          \item detect compromised services,
+          \item detect Key material reuse.
         \end{itemize}
 \end{frame}
 
@@ -49,21 +51,26 @@
 
         History of links between:
         \begin{itemize}
-          \item x509 certificates (And therefore their fields) 
-          \item Ports
-          \item IP address
-          \item Client (ja3)
-          \item Server (ja3s)
+          \item x509 certificates (And therefore their fields),
+          \item ports,
+          \item IP address,
+          \item client (ja3),
+          \item server (ja3s),
         \end{itemize}
+        \begin{displayquote}
+        ``JA3 is a method for creating SSL/TLS client fingerprints that should be easy to produce on any platform and can be easily shared for threat intelligence.''\footnote{https://github.com/salesforce/ja3}
+        \end{displayquote}
 \end{frame}
  
 \begin{frame}
         \frametitle{Problem statement}
         \begin{itemize}
-          \item CIRCL already offers a similar service based on SSLDump
-          \item SSLDump needs some love - maintaining it is hard
-          \item Alternatives do not span the entire TLS Handshake (Salesforce's ja3)
-          \item TCP reassembly is not an easy problem to solve (Cloudfare uses tshark)
+          \item CIRCL already offers a similar service based on SSLDump\footnote{https://www.circl.lu/services/passive-ssl/},
+          \item SSLDump needs some love - maintaining it is hard,
+          \item SSLDump needs some love - extending it even harder,
+          \item nlternatives do not span the entire TLS Handshake (Salesforce's
+            ja3\footnote{https://github.com/salesforce/ja3}),
+          \item TCP reassembly is not an easy problem to solve (Cloudfare's uses tshark\footnote{https://github.com/cloudflare/mitmengine}),
         \end{itemize}
 \end{frame}
 
@@ -71,15 +78,15 @@
         \frametitle{sensor-d4-tls-fingerprinting}
         Main features:
         \begin{itemize}
-          \item Take over SSLDump's duty
+          \item take over SSLDump's duty,
           \item written in Golang 
-          \item uses Go packet for tcp reassembly and spans whole handshake
+          \item uses Go packet for tcp reassembly and spans whole TLS handshake
           \item ja3, ja3s, certificates, ip src / dst, port src / dst, TLSH
         \end{itemize}
         Current caveats:
         \begin{itemize}
           \item Support for TLS 1.3 pending
-          \item Reassembly requires RAM
+          \item Reassembly consumes a lot of RAM
         \end{itemize}
 \end{frame}
 
@@ -106,7 +113,7 @@
 \end{frame}
 
 \begin{frame}
-        \frametitle{sensor-d4-tls-fingerprinting - collectoin}
+        \frametitle{sensor-d4-tls-fingerprinting - collection}
 
   \input{d4-tlsf.tex}
 
@@ -131,17 +138,55 @@ Depends on libpcap.
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[fragile]
         \frametitle{sensor-d4-tls-fingerprinting - d4 client} 
-        \input{pipe.tex}
-        \vspace{.8cm}
-        D4 server requires a meta-header in order to accept this data:
+        Required setting:
+        \begin{itemize}
+        \item type should be set to 2 or 254
+          \item metaheader.json should state type: ja3-jl
+        \end{itemize}
         \input{metaheader.json}
+        \vspace{.5cm}
+        \input{pipe.tex}
+        In the present setting the sensor will:
+        \begin{itemize}
+          \item describe every TLS Sessions,
+          \item marshal this description in JSON format
+          \item ship this description to D4 server
+        \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
         \frametitle{sensor-d4-tls-fingerprinting - d4 worker} 
         \input{worker.tex}
+        \begin{itemize}
+          \item processes each reassembled JSON description,
+          \item extracts x509 certificates and write to disk,
+          \item writes JSON description to disk,
+          \item push the files paths to the analyzer.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+        \frametitle{sensor-d4-tls-fingerprinting - d4 analyzer} 
+        (Proof of Concept)
+        \begin{itemize}
+          \item LPOP a redis list populated by the worker
+          \item dumbly push JSON description into a postgres database
+        \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+        \frametitle{sensor-d4-tls-fingerprinting - d4 passivessl API} 
+        (Proof of Concept)
+        
+        Exposes a REST API to query the collected data:
+        \begin{itemize}
+          \item /index : returns, the full DB :)
+          \item /ja3/ : returns, all TLS sessions with a given JA3 Signature
+          \item /ja3s/ : returns, all TLS sessions with a given JA3S Signature
+        \end{itemize}
 \end{frame}
 
 
