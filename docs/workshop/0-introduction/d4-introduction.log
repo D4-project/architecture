@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.13)  7 FEB 2019 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.13)  29 MAR 2019 09:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1220,7 +1220,7 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
 (Font)              scaled to size 6.0pt on input line 26.
 
-Overfull \vbox (73.12874pt too high) detected at line 26
+Overfull \vbox (75.10074pt too high) detected at line 26
  []
 
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
@@ -1251,25 +1251,17 @@ LaTeX Font Info:    Font shape `T1/FiraMono-TOsF/m/n' will be
 ] [4
 
 ]
-<d4-overview.pdf, id=51, 844.15375pt x 598.235pt>
-File: d4-overview.pdf Graphic file (type pdf)
-<use d4-overview.pdf>
-Package pdftex.def Info: d4-overview.pdf  used on input line 67.
-(pdftex.def)             Requested size: 320.78175pt x 227.33165pt.
+<../../diagram/d4-overview.png, id=51, 789.9111pt x 544.9158pt>
+File: ../../diagram/d4-overview.png Graphic file (type png)
+<use ../../diagram/d4-overview.png>
+Package pdftex.def Info: ../../diagram/d4-overview.png  used on input line 67.
+(pdftex.def)             Requested size: 300.16933pt x 207.07014pt.
+ [5
 
-Overfull \vbox (3.87543pt too high) detected at line 67
- []
-
-[5
-
- <./d4-overview.pdf
-
-pdfTeX warning: pdflatex (file ./d4-overview.pdf): PDF inclusion: invalid other
- resource which is no dict (key 'ProcSets', type <array>); ignored.
->] [6
+ <../../diagram/d4-overview.png>] [6
 
 ]
-<d4-protocol-encapsulation.png, id=84, 844.756pt x 597.432pt>
+<d4-protocol-encapsulation.png, id=64, 844.756pt x 597.432pt>
 File: d4-protocol-encapsulation.png Graphic file (type png)
 <use d4-protocol-encapsulation.png>
 Package pdftex.def Info: d4-protocol-encapsulation.png  used on input line 83.
@@ -1310,75 +1302,98 @@ LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/it' will be
 ] [14
 
 ]
-<d4-4.png, id=132, 1926.19624pt x 860.21375pt>
-File: d4-4.png Graphic file (type png)
-<use d4-4.png>
-Package pdftex.def Info: d4-4.png  used on input line 191.
+<d4-worker-2.png, id=111, 825.0825pt x 742.775pt>
+File: d4-worker-2.png Graphic file (type png)
+<use d4-worker-2.png>
+Package pdftex.def Info: d4-worker-2.png  used on input line 195.
+(pdftex.def)             Requested size: 247.52666pt x 222.83421pt.
+ [15
+
+ <./d4-worker-2.png>] [16
+
+]
+<d4-5.png, id=123, 1926.19624pt x 860.21375pt>
+File: d4-5.png Graphic file (type png)
+<use d4-5.png>
+Package pdftex.def Info: d4-5.png  used on input line 213.
 (pdftex.def)             Requested size: 346.70036pt x 154.83179pt.
 
-Overfull \hbox (25.18411pt too wide) in paragraph at lines 191--191
-[][]  
- []
-
-[15
-
- <./d4-4.png>]
-<d4-3.png, id=139, 1906.12125pt x 945.5325pt>
-File: d4-3.png Graphic file (type png)
-<use d4-3.png>
-Package pdftex.def Info: d4-3.png  used on input line 196.
-(pdftex.def)             Requested size: 343.08702pt x 170.1885pt.
-
-Overfull \hbox (21.57077pt too wide) in paragraph at lines 196--196
-[][]  
- []
-
-[16
-
- <./d4-3.png>]
-<d4-1.png, id=146, 1924.18875pt x 791.95876pt>
-File: d4-1.png Graphic file (type png)
-<use d4-1.png>
-Package pdftex.def Info: d4-1.png  used on input line 201.
-(pdftex.def)             Requested size: 346.33904pt x 142.54642pt.
-
-Overfull \hbox (24.82278pt too wide) in paragraph at lines 201--201
+Overfull \hbox (25.18411pt too wide) in paragraph at lines 213--213
 [][]  
  []
 
 [17
 
- <./d4-1.png>]
-<d4-2.png, id=153, 1911.14pt x 920.43875pt>
+ <./d4-5.png>]
+<d4-2.png, id=130, 1847.90375pt x 963.6pt>
 File: d4-2.png Graphic file (type png)
 <use d4-2.png>
-Package pdftex.def Info: d4-2.png  used on input line 207.
-(pdftex.def)             Requested size: 343.99036pt x 165.67183pt.
+Package pdftex.def Info: d4-2.png  used on input line 218.
+(pdftex.def)             Requested size: 332.60832pt x 173.4405pt.
 
-Overfull \hbox (22.4741pt too wide) in paragraph at lines 207--207
+Overfull \hbox (11.09207pt too wide) in paragraph at lines 218--218
 [][]  
  []
 
 [18
 
- <./d4-2.png>] [19
+ <./d4-2.png>]
+<d4-3.png, id=136, 1830.84pt x 869.2475pt>
+File: d4-3.png Graphic file (type png)
+<use d4-3.png>
+Package pdftex.def Info: d4-3.png  used on input line 223.
+(pdftex.def)             Requested size: 329.53699pt x 156.4578pt.
+
+Overfull \hbox (8.02074pt too wide) in paragraph at lines 223--223
+[][]  
+ []
+
+[19
+
+ <./d4-3.png>]
+<d4-1.png, id=143, 1924.18875pt x 791.95876pt>
+File: d4-1.png Graphic file (type png)
+<use d4-1.png>
+Package pdftex.def Info: d4-1.png  used on input line 228.
+(pdftex.def)             Requested size: 346.33904pt x 142.54642pt.
+
+Overfull \hbox (24.82278pt too wide) in paragraph at lines 228--228
+[][]  
+ []
+
+[20
+
+ <./d4-1.png>]
+<d4-4.png, id=150, 1911.14pt x 920.43875pt>
+File: d4-4.png Graphic file (type png)
+<use d4-4.png>
+Package pdftex.def Info: d4-4.png  used on input line 234.
+(pdftex.def)             Requested size: 343.99036pt x 165.67183pt.
+
+Overfull \hbox (22.4741pt too wide) in paragraph at lines 234--234
+[][]  
+ []
+
+[21
+
+ <./d4-4.png>] [22
 
 ]
 LaTeX Font Info:    Font shape `T1/FiraSans-OsF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 238.
+(Font)              scaled to size 12.0pt on input line 265.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) (./tcpdump.tex) [20
+) (./tcpdump.tex) [23
 
-] [21
+] [24
 
-] (./d4-client.tex) [22
+] (./d4-client.tex) [25
 
-] [23
+] [26
 
 ]
 Missing character: There is no s in font nullfont!
@@ -1391,19 +1406,19 @@ Missing character: There is no 0 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 4 in font nullfont!
 
-Underfull \hbox (badness 1320) in paragraph at lines 328--328
+Underfull \hbox (badness 1320) in paragraph at lines 355--355
  []|\T1/FiraSans-OsF/m/sc/14.4 Observing SYN floods at-tacks in backscat-ter 
  []
 
-[24
-
-] [25
-
-] (./flags.tex) [26
-
-] (./pibs.tex) [27
+[27
 
 ] [28
+
+] (./flags.tex) [29
+
+] (./pibs.tex) [30
+
+] [31
 
 ]
 \tf@nav=\write7
@@ -1415,19 +1430,19 @@ Underfull \hbox (badness 1320) in paragraph at lines 328--328
 \tf@snm=\write9
 \openout9 = `d4-introduction.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 427.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 427.
  (./d4-introduction.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 400.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 400.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 427.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 427.
 Package rerunfilecheck Info: File `d4-introduction.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25676 strings out of 492982
- 515683 string characters out of 6134895
- 652069 words of memory out of 5000000
- 28579 multiletter control sequences out of 15000+600000
+ 25705 strings out of 492982
+ 516067 string characters out of 6134895
+ 652361 words of memory out of 5000000
+ 28599 multiletter control sequences out of 15000+600000
  324948 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,16n,99p,821b,1405s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1441,10 +1456,10 @@ ic/fira/FiraSans-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb>
-Output written on d4-introduction.pdf (28 pages, 865441 bytes).
+Output written on d4-introduction.pdf (31 pages, 990641 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 259 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
