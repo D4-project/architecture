@@ -10,6 +10,8 @@
 \usepackage{fancyvrb}
 \usepackage{listings}
 \usepackage{tabularx}
+\usepackage{amsfonts}
+\usepackage{csquotes}
 \definecolor{main}{RGB}{47, 161, 219}
 \definecolor{background}{RGB}{240, 247, 255}
 \definecolor{textcolor}{RGB}{85, 87, 83}
@@ -60,7 +62,9 @@
         \item D4 Project (co-funded under INEA CEF EU program) started - 1st November 2018
         \item D4 encapsulation protocol version 1 published  - 1st December 2018
         \item v0.1 release of the D4 core\footnote{\url{https://www.github.com/D4-project/d4-core}} including a server and simple D4 C client - 21st January 2019
-        \item First version of a golang D4 client\footnote{\url{https://www.github.com/D4-project/d4-goclient/}} running on ARM, MIPS, PPC and x86 - February 2019
+        \item First version of a golang D4
+          client\footnote{\url{https://www.github.com/D4-project/d4-goclient/}}
+          running on ARM, MIPS, PPC and x86 - 14th February 2019
  \end{itemize}
 \end{frame}
 
@@ -91,40 +95,29 @@ sensor-d4-tls-fingerprinting-0.1 & Apr. 25, 2019 \tabularnewline
 \end{tabularx}
 \end{center}
 
+see \url{https://github.com/D4-Project}
 \end{frame}
 
 \begin{frame}
 \frametitle{D4 Overview}
         \includegraphics[scale=0.38]{../../diagram/d4-overview.png}
-        % HERE there will be a timeline - not done in Tkiz
 \end{frame}
 
 \begin{frame}
-        \frametitle{Roadmap}
-        \begin{itemize}
-          
-                \item CIRCL will host an instance for organisations willing to
-                  contribute without running their own D4 server, as well as for free-riders:
+        \frametitle{Roadmap - output}
 
+                 CIRCL will host a server instance for organisations willing to
+                  contribute to a public dataset without running their own D4 server:
                   \begin{itemize}
-                  \item Passive DNS collector / analyzer / lookup service
-                  \item Passive SSL collector / analyzer / lookup service
+                  \item [\checkmark]Passive SSL 
+                  \item [\checkmark] Passive DNS 
+                  \item [\checkmark]Blackhole DDoS
+                  \item BGP mapping 
+                  \item egress filtering mapping
+                  \item Radio monitoring
+                  \item ...
                   \end{itemize}
-                \item Closely followed by: 
-                  \begin{itemize}
-                  \item Backscatter DDoS traffic analyzer
-                  \end{itemize}
-        \end{itemize}
 \end{frame}
-
-\begin{frame}
-\frametitle{D4 Overview}
-
-
-\end{frame}
-
-
-
 
 \begin{frame}
         \frametitle{D4 encapsulation protocol}
@@ -225,26 +218,164 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
         \includegraphics[width=\textwidth]{../../diagram/d4-4.png}
 \end{frame}
 
-
-
 \begin{frame}
         \frametitle{}
-        {\center Passive DNS}
+        \begin{center}
+         A distributed Network telescope to observe DDoS attacks
+        \end{center}
+        \vspace{10pt}
+        \begin{center}
+          \includegraphics[width=.7\textwidth]{eventhorizon.png}
+        \end{center}
 \end{frame}
-
-
 
 \begin{frame}
-        \frametitle{}
-        {\center Passive SSL}
+        \frametitle{Motivation}
+        DDoS Attacks produce an observable side-effect:
+        \begin{center}
+          \scalebox{0.8}{\input{bsvol.tex}}
+        \end{center}
 \end{frame}
-
 
 \begin{frame}
-        \frametitle{}
-        {\center Passive Identification of BackScatter traffic}
+\frametitle{What can be derived from backscatter traffic?}
+
+\begin{itemize}
+    \item External point of view on ongoing denial of service attacks
+    \item Confirm if there is a DDOS attack
+    \item Recover time line of attacked targets
+    \item Confirm which services (DNS, webserver, $\dots$)
+    \item Infrastructure changes
+    \item Assess the state of an infrastructure under denial of service attack
+    \begin{itemize}
+        \item Detect failure/addition of  intermediate network equipments, firewalls, proxy servers etc
+        \item Detect DDoS mitigation devices
+    \end{itemize}
+    \item Create probabilistic models of denial of service attacks
+\end{itemize}
 \end{frame}
 
+\begin{frame}
+        \frametitle{D4 in this setting}
+
+        Aggregating backscatter traffic collected from D4 sensors:
+        \begin{itemize}
+          \item have various points of observation (non contiguous address space)
+          \item perform analysis on bigger amount of data
+        \end{itemize}
+
+        D4 lookup should provide:
+        \begin{itemize}
+        \item backscatter analysis results,
+        \item daily updates,
+        \item additional relevant information (DNS, BGP, etc.). 
+        \end{itemize}
+
+      \end{frame}
+
+      \begin{frame}
+  \begin{center}
+    Passive DNS
+  \end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Problem statement}
+        \begin{itemize}
+                \item CIRCL (and other CSIRTs) have their own passive DNS\footnote{\url{https://www.circl.lu/services/passive-dns/}} collection mechanisms
+                \item Current {\bf collection models} are affected with DoH\footnote{DNS over HTTPS} and centralised DNS services
+                \item DNS answers collection is a tedious process
+                \item {\bf Sharing Passive DNS stream} between organisation is challenging due to privacy
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Potential Strategy}
+ \begin{itemize}
+         \item Improve {\bf Passive DNS collection diversity} by being closer to the source and limit impact of DoH (e.g. at the OS resolver level)
+         \item Increasing diversity and {\bf mixing models} before sharing/storing Passive DNS records
+         \item Simplify process and tools to install for {\bf Passive DNS collection by relying on D4 sensors} instead of custom mechanisms
+         \item Provide a distributed infrastructure for mixing streams and filtering out the sharing to the validated partners
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{First release}
+ \begin{itemize}
+
+         \item analyzer-d4-passivedns\footnote{\url{https://github.com/D4-project/analyzer-d4-passivedns}} is an analyzer for a D4 network sensor. The analyser can process data produced by D4 sensors (in passivedns CSV format\footnote{\url{https://github.com/gamelinux/passivedns}})
+         \item Ingest these into a {\bf Passive DNS server} which can be queried later to search for the Passive DNS records
+\item The lookup server (using on redis-compatible backend) is a Passive DNS REST server compliant to the Common Output Format\footnote{\url{https://tools.ietf.org/html/draft-dulaunoy-dnsop-passive-dns-cof-04}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    Passive SSL revamping 
+  \end{center}
+\end{frame}
+       
+\begin{frame}
+        \frametitle{A passive SSL fingerprinter}
+        CSIRT's rationale for collecting TLS handshakes:
+        \begin{itemize}
+          \item pivot on additional data points,
+          \item find owners of IP addresses,
+          \item detect usage of CIDR blocks,
+          \item detect vulnerable systems,
+          \item detect compromised services,
+          \item detect Key material reuse,
+          \item detect weak keys.
+          \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Objectives}
+        History of links between:
+        \begin{itemize}
+          \item x509 certificates,
+          \item ports,
+          \item IP address,
+          \item client (ja3),
+          \item server (ja3s),
+        \end{itemize}
+        \begin{displayquote}
+        ``JA3 is a method for creating SSL/TLS client fingerprints that should be easy to produce on any platform and can be easily shared for threat intelligence.''\footnote{https://github.com/salesforce/ja3}
+        \end{displayquote}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Objectives}
+        Mind your Ps and Qs:
+        \begin{itemize}
+        \item Public keys type and size,
+        \item modulos and exponents,
+        \item curves parameters.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{First release}
+  \begin{itemize}
+  \item[\checkmark] sensor-d4-tls-fingerprinting
+    \footnote{\url{github.com/D4-project/sensor-d4-tls-fingerprinting}}:
+    Extracts and fingerprints certificates 
+  \item[\checkmark] analyzer-d4-passivessl
+    \footnote{\url{github.com/D4-project/analyzer-d4-passivessl}}:
+    Stores Certificates / PK details in a PostgreSQL DB
+  \item lookup-d4-passivessl
+    \footnote{\url{github.com/D4-project/lookup-d4-passivessl}}:
+    Exposes the DB through a public REST API
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Future}
+     \begin{itemize}
+     \item {\bf Mixing models for passive collection streams} (for privacy) in next version of D4 core server
+     \item Interconnecting private D4 sensor networks with other D4 sensor networks (sharing to partners filtered stream)
+     \item Previewing dataset collected in D4 sensor network and providing {\bf open data stream} (if contributor agrees to share under specific conditions)
+\end{itemize}
+\end{frame}
 
 \begin{frame}
 \frametitle{Get in touch if you want to join the project, host a sensor or contribute}
