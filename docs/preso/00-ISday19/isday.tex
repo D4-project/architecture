@@ -59,12 +59,12 @@
 \begin{frame}
         \frametitle{(short) History}
  \begin{itemize}
-        \item D4 Project (co-funded under INEA CEF EU program) started - 1st November 2018
-        \item D4 encapsulation protocol version 1 published  - 1st December 2018
-        \item v0.1 release of the D4 core\footnote{\url{https://www.github.com/D4-project/d4-core}} including a server and simple D4 C client - 21st January 2019
+        \item D4 Project (co-funded under INEA CEF EU program) started - {\bf 1st November 2018}
+        \item D4 encapsulation protocol version 1 published  - {\bf 1st December 2018}
+        \item v0.1 release of the D4 core\footnote{\url{https://www.github.com/D4-project/d4-core}} including a server and simple D4 C client - {\bf 21st January 2019}
         \item First version of a golang D4
           client\footnote{\url{https://www.github.com/D4-project/d4-goclient/}}
-          running on ARM, MIPS, PPC and x86 - 14th February 2019
+          running on ARM, MIPS, PPC and x86 - {\bf 14th February 2019}
  \end{itemize}
 \end{frame}
 
@@ -114,7 +114,7 @@ see \url{https://github.com/D4-Project}
                   \item [\checkmark]Blackhole DDoS
                   \item BGP mapping 
                   \item egress filtering mapping
-                  \item Radio monitoring
+                  \item Radio-Specturm monitoring: 802.11, BLE, etc. 
                   \item ...
                   \end{itemize}
 \end{frame}
@@ -181,7 +181,7 @@ see \url{https://github.com/D4-Project}
 
 \begin{frame}
         \frametitle{D4 server - management interface}
-The D4 server provides a web interface to manage D4 sensors, sessions and analyzer.
+The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and analyzer.
         \begin{itemize}
 \item Get Sensors status, errors and statistics
 \item Get all connected sensors
@@ -194,34 +194,34 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
 
 \begin{frame}
         \frametitle{D4 server - main interface}
-        \includegraphics[width=\textwidth]{../../diagram/d4-5.png}
+        \includegraphics[width=\textwidth]{./d4-5.png}
 \end{frame}
 
 \begin{frame}
         \frametitle{D4 server - server management}
-        \includegraphics[width=\textwidth]{../../diagram/d4-2.png}
+        \includegraphics[width=\textwidth]{./d4-2.png}
 \end{frame}
 
 \begin{frame}
         \frametitle{D4 server - server management}
-        \includegraphics[width=\textwidth]{../../diagram/d4-3.png}
+        \includegraphics[width=\textwidth]{./d4-3.png}
 \end{frame}
 
 \begin{frame}
         \frametitle{D4 server - sensor overview}
-        \includegraphics[width=\textwidth]{../../diagram/d4-1.png}
+        \includegraphics[width=\textwidth]{./d4-1.png}
 \end{frame}
 
 
 \begin{frame}
         \frametitle{D4 server - sensor management}
-        \includegraphics[width=\textwidth]{../../diagram/d4-4.png}
+        \includegraphics[width=\textwidth]{./d4-4.png}
 \end{frame}
 
 \begin{frame}
         \frametitle{}
         \begin{center}
-         A distributed Network telescope to observe DDoS attacks
+         {\bf A distributed Network telescope to observe DDoS attacks}
         \end{center}
         \vspace{10pt}
         \begin{center}
@@ -241,41 +241,46 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
 \frametitle{What can be derived from backscatter traffic?}
 
 \begin{itemize}
-    \item External point of view on ongoing denial of service attacks
-    \item Confirm if there is a DDOS attack
-    \item Recover time line of attacked targets
-    \item Confirm which services (DNS, webserver, $\dots$)
-    \item Infrastructure changes
-    \item Assess the state of an infrastructure under denial of service attack
+    \item External point of view on ongoing Denial of Service attacks:
+\begin{itemize}
+    \item {\bf Confirm} if there is a DDoS attack
+    \item {\bf Recover} time line of attacked targets
+    \item {\bf Confirm} which services (DNS, webserver, $\dots$)
+    \item {\bf Observe} Infrastructure changes
+\end{itemize}
+    \item {\bf Assess the state of an infrastructure under denial of service attack}
     \begin{itemize}
-        \item Detect failure/addition of  intermediate network equipments, firewalls, proxy servers etc
-        \item Detect DDoS mitigation devices
+        \item {\bf Detect} failure/addition of  intermediate network equipments, firewalls, proxy servers etc
+        \item {\bf Detect} DDoS mitigation devices
     \end{itemize}
-    \item Create probabilistic models of denial of service attacks
+    \item Create models of DoS/DDoS attacks
 \end{itemize}
 \end{frame}
 
 \begin{frame}
         \frametitle{D4 in this setting}
 
-        Aggregating backscatter traffic collected from D4 sensors:
+        
+        D4 - for data collection and processing:
         \begin{itemize}
-          \item have various points of observation (non contiguous address space)
-          \item perform analysis on bigger amount of data
+          \item {\bf provide} various points of observation in non contiguous address space,
+          \item {\bf aggregate} and {\bf mix} backscatter traffic collected from D4 sensors,
+          \item {\bf perform} analysis on big amount of data.
         \end{itemize}
 
-        D4 lookup should provide:
+        D4 - from a end-user perspective:
         \begin{itemize}
-        \item backscatter analysis results,
-        \item daily updates,
-        \item additional relevant information (DNS, BGP, etc.). 
+        \item {\bf provide} backscatter analysis results,
+        \item {\bf provide} daily updates,
+        \item {\bf provide} additional relevant (or pivotal) information (DNS, BGP, etc.),
+        \item {\bf provide} an API and search capabilities.
         \end{itemize}
 
       \end{frame}
 
       \begin{frame}
   \begin{center}
-    Passive DNS
+    {\bf Passive DNS}
   \end{center}
 \end{frame}
 
@@ -301,17 +306,25 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
 
 \begin{frame}
         \frametitle{First release}
- \begin{itemize}
 
-         \item analyzer-d4-passivedns\footnote{\url{https://github.com/D4-project/analyzer-d4-passivedns}} is an analyzer for a D4 network sensor. The analyser can process data produced by D4 sensors (in passivedns CSV format\footnote{\url{https://github.com/gamelinux/passivedns}})
-         \item Ingest these into a {\bf Passive DNS server} which can be queried later to search for the Passive DNS records
-\item The lookup server (using on redis-compatible backend) is a Passive DNS REST server compliant to the Common Output Format\footnote{\url{https://tools.ietf.org/html/draft-dulaunoy-dnsop-passive-dns-cof-04}}
+ \begin{itemize}
+         \item[\checkmark]
+           analyzer-d4-passivedns\footnote{\url{https://github.com/D4-project/analyzer-d4-passivedns}}, an analyzer for a D4 network sensor:
+
+           \begin{itemize}
+           \item {\bf processes} data produced by D4 sensors (in passivedns CSV format\footnote{\url{https://github.com/gamelinux/passivedns}}),
+           
+         \item{\bf ingests} these into a {\bf Passive DNS server} which can be queried later to search for the Passive DNS records,
+
+         \item{\bf provides} a lookup server (using on
+           redis-compatible backend) that is a Passive DNS REST server compliant to the Common Output Format\footnote{\url{https://tools.ietf.org/html/draft-dulaunoy-dnsop-passive-dns-cof-04}}.
+         \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
   \begin{center}
-    Passive SSL revamping 
+    {\bf Passive SSL revamping}
   \end{center}
 \end{frame}
        
@@ -319,19 +332,19 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
         \frametitle{A passive SSL fingerprinter}
         CSIRT's rationale for collecting TLS handshakes:
         \begin{itemize}
-          \item pivot on additional data points,
-          \item find owners of IP addresses,
-          \item detect usage of CIDR blocks,
-          \item detect vulnerable systems,
-          \item detect compromised services,
-          \item detect Key material reuse,
-          \item detect weak keys.
+          \item {\bf pivot} on additional data points,
+          \item {\bf find} owners of IP addresses,
+          \item {\bf detect} usage of CIDR blocks,
+          \item {\bf detect} vulnerable systems,
+          \item {\bf detect} compromised services,
+          \item {\bf detect} key material reuse,
+          \item {\bf detect} weak keys.
           \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Objectives}
-        History of links between:
+  \frametitle{Objectives - x509}
+        {\bf Keeping} a log of links between:
         \begin{itemize}
           \item x509 certificates,
           \item ports,
@@ -345,13 +358,22 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
 \end{frame}
 
 \begin{frame}
-   \frametitle{Objectives}
-        Mind your Ps and Qs:
+   \frametitle{Objectives - Mind your Ps and Qs}
+   {\bf Collect} and {\bf store} x509 certificates and TLS sessions:
         \begin{itemize}
         \item Public keys type and size,
-        \item modulos and exponents,
+        \item moduli and exponents,
         \item curves parameters.
         \end{itemize}
+        {\bf Detect} broken crypto:
+        \begin{itemize}
+          \item Public Key reuse,
+          \item Moduli that share one prime factor,
+          \item Moduli that share both prime factor,
+          \item Small factors,
+          \item Nonces reuse / common preffix or suffix, etc. 
+        \end{itemize}
+        
 \end{frame}
 
 \begin{frame}
@@ -359,21 +381,23 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
   \begin{itemize}
   \item[\checkmark] sensor-d4-tls-fingerprinting
     \footnote{\url{github.com/D4-project/sensor-d4-tls-fingerprinting}}:
-    Extracts and fingerprints certificates 
+    {\bf Extracts} and {\bf fingerprints} certificates, and {\bf computes} TLSH fuzzy hash.
   \item[\checkmark] analyzer-d4-passivessl
     \footnote{\url{github.com/D4-project/analyzer-d4-passivessl}}:
-    Stores Certificates / PK details in a PostgreSQL DB
+    {\bf Stores} Certificates / PK details in a PostgreSQL DB.
   \item lookup-d4-passivessl
     \footnote{\url{github.com/D4-project/lookup-d4-passivessl}}:
-    Exposes the DB through a public REST API
+    {\bf Exposes} the DB through a public REST API.
   \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Future}
+\begin{frame}{Future}
      \begin{itemize}
      \item {\bf Mixing models for passive collection streams} (for privacy) in next version of D4 core server
-     \item Interconnecting private D4 sensor networks with other D4 sensor networks (sharing to partners filtered stream)
-     \item Previewing dataset collected in D4 sensor network and providing {\bf open data stream} (if contributor agrees to share under specific conditions)
+     \item {\bf Interconnecting private D4 sensor networks} with other D4 sensor networks (sharing to partners filtered stream)
+     \item {\bf Previewing datasets} collected in D4 sensor network and providing {\bf open data stream} (if contributor agrees to share under specific conditions)
+     \item {\bf Leverage MISP sharing communities} to augment Threat
+       Intelligence, and provide accurate metrology. 
 \end{itemize}
 \end{frame}
 
@@ -382,7 +406,9 @@ The D4 server provides a web interface to manage D4 sensors, sessions and analyz
 \begin{itemize}
 \item Collaboration can include research partnership, sharing of collected streams or improving the software.
 \item Contact: info@circl.lu
-\item \url{https://github.com/D4-Project} -  \url{https://twitter.com/d4_project}
+\item \url{https://github.com/D4-Project}
+\item \url{https://twitter.com/d4_project}
+\item \url{https://d4-project.org}
 \end{itemize}
 \end{frame}
 
