@@ -288,7 +288,8 @@ The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and 
 
            \begin{itemize}
            \item {\bf processes} data produced by D4 sensors (pcaps),
-           \item{\bf displays} potential backscatter traffic on standard output.
+           \item {\bf displays} potential backscatter traffic on standard output,
+           \item {\bf focuses} on TCP SYN scans in this first release.
 
 \end{itemize}
 \end{itemize}
@@ -385,9 +386,9 @@ The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and 
         \item moduli and exponents,
         \item curves parameters.
         \end{itemize}
-        {\bf Detect} broken crypto:
+        {\bf Detect} anti patterns in crypto:
         \begin{itemize}
-          \item Public Key reuse,
+          \item Shared Public Keys,
           \item Moduli that share one prime factor,
           \item Moduli that share both prime factor,
           \item Small factors,
