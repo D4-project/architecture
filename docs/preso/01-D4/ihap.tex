@@ -181,6 +181,68 @@ see \url{https://github.com/D4-Project}
 \end{frame}
 
 \begin{frame}
+\frametitle{D4 server handling}
+
+D4 server reconstructs the encapsulated stream from the D4 sensor and saves it in a Redis stream.
+
+\begin{itemize}
+\item Support TLS connection
+\item Unpack D4 header
+\item Verify client secret key (HMAC)
+\item check blocklist
+\item Filter by types (Only accept one connection by type-UUID - except: type 254)
+\item Discard incorrect data
+\item Save data in a Redis Stream (unique for each session)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+        \frametitle{D4 server - worker handler}
+After the stream is processed depending of the type using dedicated worker.
+        \begin{itemize}
+        \item Worker Manager (one by type)
+                \begin{itemize}
+                \item Check if a new session is created and valid data are saved in a Redis stream
+                \item Launch a new Worker for each session
+                \end{itemize}
+        \item Worker
+                \begin{itemize}
+                 \item Get data from a stream
+    		     \item Reconstruct data
+                 \item Save data on disk (with file rotation)
+                 \item Save data in Redis. Create a queue for D4 Analyzer(s)
+                \end{itemize}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - type 254 worker handler}
+        \begin{itemize}
+          \item Worker custom type (called Worker 2)
+                \begin{itemize}
+                \item Get type 2 data from a stream
+    		        \item Reconstruct Json
+                \item Extract extended type name
+                \item Use default type or special extended handler
+                \item Save Json on disk
+                \item Get type 254 data from a stream
+                \item Reconstruct type 254
+                \item Save data in Redis. Create a queue for D4 Analyzer(s)
+                \end{itemize}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - type 254 - implementation}
+        \begin{center}
+        \includegraphics[scale=0.3]{d4-worker-2.png}
+        \end{center}
+\end{frame}
+
+
+
+\begin{frame}
         \frametitle{D4 server - management interface}
 The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and analyzer.
         \begin{itemize}
