@@ -1,0 +1,498 @@
+% Full instructions available at:
+% https://github.com/elauksap/focus-beamertheme
+
+\documentclass{beamer}
+\usetheme[numbering=progressbar]{focus}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,arrows}
+\usepackage{transparent}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{amsfonts}
+\usepackage{csquotes}
+\definecolor{main}{RGB}{47, 161, 219}
+\definecolor{background}{RGB}{240, 247, 255}
+\definecolor{textcolor}{RGB}{85, 87, 83}
+
+\title{D4 Project}
+\subtitle{Open and collaborative network monitoring}
+\author{TEAM CIRCL}
+\titlegraphic{\includegraphics[scale=0.20]{../../logos/d4-logo.pdf}}
+\institute{Team CIRCL \\ \url{https://www.d4-project.org/}}
+\date{2019/07/03}
+
+\begin{document}
+    \begin{frame}
+        \maketitle
+    \end{frame}
+
+\begin{frame}
+        \frametitle{Problem statement}
+        \begin{itemize}
+                \item CSIRTs (or private organisations) build their {\bf own honeypot, honeynet or blackhole monitoring network}
+                \item Designing, managing and operating such infrastructure is a tedious and resource intensive task
+                \item {\bf Automatic sharing} between monitoring networks from different organisations is missing
+                \item Sensors and processing are often seen as blackbox or difficult to audit
+
+        \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Objective}
+ \begin{itemize}
+         \item Based on our experience with
+           MISP\footnote{\url{https://github.com/MISP/MISP}} where sharing
+           played an important role, we transpose the model in D4 project
+         \item Keeping the protocol and code base {\bf simple and minimal}
+         \item Allowing every organisation to {\bf control and audit their own sensor network}
+         \item Extending D4 or {\bf encapsulating legacy monitoring protocols} must be as simple as possible
+         \item Ensuring that the sensor server has {\bf no control on the sensor} (unidirectional streaming)
+         \item Don't force users to use dedicated sensors and allow {\bf flexibility of sensor support} (software, hardware, virtual)
+
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{D4 Overview}
+        \includegraphics[scale=0.38]{../../diagram/d4-overview.png}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{D4 Overview}
+        \includegraphics[scale=0.43]{../../diagram/mixing-d4-1.pdf}
+\end{frame}
+
+
+\begin{frame}
+        \frametitle{(short) History}
+ \begin{itemize}
+        \item D4 Project (co-funded under INEA CEF EU program) started - {\bf 1st November 2018}
+        \item D4 encapsulation protocol version 1 published  - {\bf 1st December 2018}
+        \item v0.1 release of the D4 core\footnote{\url{https://www.github.com/D4-project/d4-core}} including a server and simple D4 C client - {\bf 21st January 2019}
+        \item First version of a golang D4
+          client\footnote{\url{https://www.github.com/D4-project/d4-goclient/}}
+          running on ARM, MIPS, PPC and x86 - {\bf 14th February 2019}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{(short) History}
+\begin{center}
+  \begin{tabularx}{\linewidth}%
+    {>{\setlength\hsize{0.6\hsize}\raggedright}X%
+     >{\setlength\hsize{0.4\hsize}\raggedright}X}
+
+\hline
+Release                          & Date \tabularnewline
+\hline
+analyzer-d4-passivedns-v0.1      & Apr. 5,  2019 \tabularnewline
+analyzer-d4-passivessl-0.1       & Apr. 25, 2019 \tabularnewline
+analyzer-d4-pibs-v0.1            & Apr. 8, 2019  \tabularnewline
+BGP-Ranking-1.0                  & Apr. 25, 2019 \tabularnewline
+d4-core-v0.1                     & Jan. 25, 2019 \tabularnewline
+d4-core-v0.2                     & Feb. 14, 2019 \tabularnewline
+d4-core-v0.3                     & Apr. 8, 2019  \tabularnewline
+d4-goclient-v0.1                 & Feb. 14, 2019 \tabularnewline
+d4-goclient-v0.2                 & Apr. 8, 2019  \tabularnewline
+d4-server-packer-0.1             & Apr. 25, 2019 \tabularnewline
+IPASN-History-1.0                & Apr. 25, 2019 \tabularnewline
+sensor-d4-tls-fingerprinting-0.1 & Apr. 25, 2019 \tabularnewline
+\hline
+
+\end{tabularx}
+\end{center}
+
+see \url{https://github.com/D4-Project}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Roadmap - output}
+
+                 CIRCL will host a server instance for organisations willing to
+                  contribute to a public dataset without running their own D4 server:
+                  \begin{itemize}
+                  \item [\checkmark] Blackhole DDoS
+                  \item [\checkmark] Passive DNS 
+                  \item [\checkmark] Passive SSL 
+                  \item BGP mapping 
+                  \item egress filtering mapping
+                  \item Radio-Spectrum monitoring: 802.11, BLE, etc. 
+                  \item ...
+                  \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 encapsulation protocol}
+        \includegraphics[scale=0.38]{../../diagram/d4-protocol-encapsulation.png}
+\end{frame}
+
+\begin{frame}
+    \frametitle{D4 Header}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Name & 	bit size&  	Description\\
+        \hline
+        version &	uint 8 &	Version of the header \\
+        type 	& uint 8   &	Data encapsulated type\\
+        uuid 	& uint 128 & 	Sensor UUID\\
+        timestamp &  	uint 64 &	Encapsulation time\\
+        hmac 	& uint 256 &	Authentication header (HMAC-SHA-256-128)\\
+        size 	& uint 32 	& Payload size\\
+        \hline
+    \end{tabular}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{D4 Header}
+    \framesubtitle{Types}
+        \begin{tabular}{|l|l|}
+            \hline
+            Type &	Description\\
+            \hline
+            0 	& Reserved\\
+            1 	& pcap (libpcap 2.4)\\
+            2 	& meta header (JSON)\\
+            3 	& generic log line\\
+            4 	& dnscap output\\
+            5 	& pcapng (diagnostic)\\
+            6 	& generic NDJSON or JSON Lines\\
+            7 	& generic YAF (Yet Another Flowmeter)\\
+            8  	& passivedns CSV stream\\
+            254 &	type defined by meta header (type 2)\\
+            \hline
+        \end{tabular}
+\end{frame}
+
+\begin{frame}
+    \frametitle{D4 meta header}
+    \framesubtitle{Meta types}
+        D4 header includes an easy way to {\bf extend the protocol} (via type 2) without altering the format. Within a D4 session, the initial D4 packet(s) type 2 defines
+        the custom headers and then the following packets with type 254 is the custom data encapsulated.
+    \small
+    \input{meta.tex}
+\end{frame}
+
+\begin{frame}
+    \frametitle{D4 server}
+   \begin{itemize}
+           \item D4 core server\footnote{\url{https://github.com/D4-project/d4-core}} is a complete server to handle clients (sensors) including the decapsulation of the D4 protocol, control of sensor registrations, management of decoding protocols and dispatching to adequate decoders/analysers.
+           \item D4 server is written in Python 3.6 and runs on standard GNU/Linux distribution.
+   \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{D4 server handling}
+
+D4 server reconstructs the encapsulated stream from the D4 sensor and saves it in a Redis stream.
+
+\begin{itemize}
+\item Support TLS connection
+\item Unpack D4 header
+\item Verify client secret key (HMAC)
+\item check blocklist
+\item Filter by types (Only accept one connection by type-UUID - except: type 254)
+\item Discard incorrect data
+\item Save data in a Redis Stream (unique for each session)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+        \frametitle{D4 server - worker handler}
+After the stream is processed depending of the type using dedicated worker.
+        \begin{itemize}
+        \item Worker Manager (one by type)
+                \begin{itemize}
+                \item Check if a new session is created and valid data are saved in a Redis stream
+                \item Launch a new Worker for each session
+                \end{itemize}
+        \item Worker
+                \begin{itemize}
+                 \item Get data from a stream
+    		     \item Reconstruct data
+                 \item Save data on disk (with file rotation)
+                 \item Save data in Redis. Create a queue for D4 Analyzer(s)
+                \end{itemize}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - management interface}
+The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and analyzer.
+        \begin{itemize}
+\item Get Sensors status, errors and statistics
+\item Get all connected sensors
+\item Manage Sensors (stream size limit, secret key, ...)
+\item Manage Accepted types
+\item UUID/IP blocklist
+\item  Create Analyzer Queues
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - main interface}
+        \includegraphics[width=\textwidth]{./d4-5.png}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - server management}
+        \includegraphics[width=\textwidth]{./d4-2.png}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - server management}
+        \includegraphics[width=\textwidth]{./d4-3.png}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 server - sensor overview}
+        \includegraphics[width=\textwidth]{./d4-1.png}
+\end{frame}
+
+
+\begin{frame}
+        \frametitle{D4 server - sensor management}
+        \includegraphics[width=\textwidth]{./d4-4.png}
+\end{frame}
+
+\begin{frame}
+        \frametitle{}
+        \begin{center}
+         {\bf A distributed Network telescope to observe DDoS attacks}
+        \end{center}
+        \vspace{10pt}
+        \begin{center}
+          \includegraphics[width=.7\textwidth]{eventhorizon.png}
+        \end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Motivation}
+        DDoS Attacks produce an observable side-effect:
+        \begin{center}
+          \scalebox{0.8}{\input{bsvol.tex}}
+        \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{What can be derived from backscatter traffic?}
+
+\begin{itemize}
+    \item External point of view on ongoing Denial of Service attacks:
+\begin{itemize}
+    \item {\bf Confirm} if there is a DDoS attack
+    \item {\bf Recover} time line of attacked targets
+    \item {\bf Confirm} which services (DNS, webserver, $\dots$)
+    \item {\bf Observe} Infrastructure changes
+\end{itemize}
+    \item {\bf Assess the state of an infrastructure under denial of service attack}
+    \begin{itemize}
+        \item {\bf Detect} failure/addition of  intermediate network equipments, firewalls, proxy servers etc
+        \item {\bf Detect} DDoS mitigation devices
+    \end{itemize}
+    \item {\bf Create} models of DoS/DDoS attacks
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{D4 in this setting}
+
+        
+        D4 - for data collection and processing:
+        \begin{itemize}
+          \item {\bf provide} various points of observation in non contiguous address space,
+          \item {\bf aggregate} and {\bf mix} backscatter traffic collected from D4 sensors,
+          \item {\bf perform} analysis on big amount of data.
+        \end{itemize}
+
+        D4 - from a end-user perspective:
+        \begin{itemize}
+        \item {\bf provide} backscatter analysis results,
+        \item {\bf provide} daily updates,
+        \item {\bf provide} additional relevant (or pivotal) information (DNS, BGP, etc.),
+        \item {\bf provide} an API and search capabilities.
+        \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+        \frametitle{First release}
+
+ \begin{itemize}
+         \item[\checkmark]
+           analyzer-d4-pibs\footnote{\url{https://github.com/D4-project/analyzer-d4-pibs}}, an analyzer for a D4 network sensor:
+
+           \begin{itemize}
+           \item {\bf processes} data produced by D4 sensors (pcaps),
+           \item {\bf displays} potential backscatter traffic on standard output,
+           \item {\bf focuses} on TCP SYN flood in this first release.
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+      
+
+\begin{frame}
+  \begin{center}
+    {\bf Passive DNS}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Problem statement}
+        \begin{itemize}
+                \item CIRCL (and other CSIRTs) have their own passive DNS\footnote{\url{https://www.circl.lu/services/passive-dns/}} collection mechanisms
+                \item Current {\bf collection models} are affected with DoH\footnote{DNS over HTTPS} and centralised DNS services
+                \item DNS answers collection is a tedious process
+                \item {\bf Sharing Passive DNS stream} between organisation is challenging due to privacy
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Potential Strategy}
+ \begin{itemize}
+         \item Improve {\bf Passive DNS collection diversity} by being closer to the source and limit impact of DoH (e.g. at the OS resolver level)
+         \item Increasing diversity and {\bf mixing models} before sharing/storing Passive DNS records
+         \item Simplify process and tools to install for {\bf Passive DNS collection by relying on D4 sensors} instead of custom mechanisms
+         \item Provide a distributed infrastructure for mixing streams and filtering out the sharing to the validated partners
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+        \frametitle{First release}
+
+ \begin{itemize}
+         \item[\checkmark]
+           analyzer-d4-passivedns\footnote{\url{https://github.com/D4-project/analyzer-d4-passivedns}}, an analyzer for a D4 network sensor:
+
+           \begin{itemize}
+           \item {\bf processes} data produced by D4 sensors (in passivedns CSV format\footnote{\url{https://github.com/gamelinux/passivedns}}),
+           
+         \item{\bf ingests} these into a {\bf Passive DNS server} which can be queried later to search for the Passive DNS records,
+
+         \item{\bf provides} a lookup server (using on
+           redis-compatible backend) that is a Passive DNS REST server compliant to the Common Output Format\footnote{\url{https://tools.ietf.org/html/draft-dulaunoy-dnsop-passive-dns-cof-04}}.
+         \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Passive SSL revamping}
+  \end{center}
+\end{frame}
+       
+\begin{frame}
+        \frametitle{A passive SSL fingerprinter}
+        CSIRT's rationale for collecting TLS handshakes:
+        \begin{itemize}
+          \item {\bf pivot} on additional data points,
+          \item {\bf find} owners of IP addresses,
+          \item {\bf detect} usage of CIDR blocks,
+          \item {\bf detect} vulnerable systems,
+          \item {\bf detect} compromised services,
+          \item {\bf detect} key material reuse,
+          \item {\bf detect} weak keys.
+          \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Objectives - TLS Fingerprinting}
+        {\bf Keeping} a log of links between:
+        \begin{itemize}
+          \item x509 certificates,
+          \item ports,
+          \item IP address,
+          \item client (ja3),
+          \item server (ja3s),
+        \end{itemize}
+        \begin{displayquote}
+        ``JA3 is a method for creating SSL/TLS client fingerprints that should be easy to produce on any platform and can be easily shared for threat intelligence.''\footnote{https://github.com/salesforce/ja3}
+        \end{displayquote}
+\end{frame}
+
+\begin{frame}
+   \frametitle{Objectives - Mind your Ps and Qs}
+   {\bf Collect} and {\bf store} x509 certificates and TLS sessions:
+        \begin{itemize}
+        \item Public keys type and size,
+        \item moduli and exponents,
+        \item curves parameters.
+        \end{itemize}
+        {\bf Detect} anti patterns in crypto:
+        \begin{itemize}
+          \item Shared Public Keys,
+          \item Moduli that share one prime factor,
+          \item Moduli that share both prime factor,
+          \item Small factors,
+          \item Nonces reuse / common preffix or suffix, etc. 
+        \end{itemize}
+        
+\end{frame}
+
+\begin{frame}
+  \frametitle{First release}
+  \begin{itemize}
+  \item[\checkmark] sensor-d4-tls-fingerprinting
+    \footnote{\url{github.com/D4-project/sensor-d4-tls-fingerprinting}}:
+    {\bf Extracts} and {\bf fingerprints} certificates, and {\bf computes} TLSH fuzzy hash.
+  \item[\checkmark] analyzer-d4-passivessl
+    \footnote{\url{github.com/D4-project/analyzer-d4-passivessl}}:
+    {\bf Stores} Certificates / PK details in a PostgreSQL DB.
+  \item lookup-d4-passivessl
+    \footnote{\url{github.com/D4-project/lookup-d4-passivessl}}:
+    {\bf Exposes} the DB through a public REST API.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Future}
+     \begin{itemize}
+     \item {\bf Mixing models for passive collection streams} (for privacy) in next version of D4 core server
+     \item {\bf Interconnecting private D4 sensor networks} with other D4 sensor networks (sharing to partners filtered stream)
+     \item {\bf Previewing datasets} collected in D4 sensor network and providing {\bf open data stream} (if contributor agrees to share under specific conditions)
+     \item {\bf Leverage MISP sharing communities} to augment Threat
+       Intelligence, and provide accurate metrology. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Use Cases}
+\begin{itemize}
+
+\item 
+\item 
+\item 
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Get in touch if you want to join the project, host a sensor or contribute}
+\begin{itemize}
+\item Collaboration can include research partnership, sharing of collected streams or improving the software.
+\item Contact: info@circl.lu
+\item \url{https://github.com/D4-Project}
+\item \url{https://twitter.com/d4_project}
+\item \url{https://d4-project.org}
+\begin{itemize}
+  \item
+    \href{https://d4-project.org/2019/05/28/passive-dns-tutorial.html}{Passive DNS tutorial}
+  \item
+    \href{https://d4-project.org/2019/06/17/sharing-between-D4-sensors.html}{Data
+      sharing tutorial}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\end{document}
