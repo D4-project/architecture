@@ -204,24 +204,6 @@ D4 server reconstructs the encapsulated stream from the D4 sensor and saves it i
 \end{frame}
 
 
-\begin{frame}
-        \frametitle{D4 server - worker handler}
-After the stream is processed depending of the type using dedicated worker.
-        \begin{itemize}
-        \item Worker Manager (one by type)
-                \begin{itemize}
-                \item Check if a new session is created and valid data are saved in a Redis stream
-                \item Launch a new Worker for each session
-                \end{itemize}
-        \item Worker
-                \begin{itemize}
-                 \item Get data from a stream
-    		     \item Reconstruct data
-                 \item Save data on disk (with file rotation)
-                 \item Save data in Redis. Create a queue for D4 Analyzer(s)
-                \end{itemize}
-        \end{itemize}
-\end{frame}
 
 \begin{frame}
         \frametitle{D4 server - management interface}
