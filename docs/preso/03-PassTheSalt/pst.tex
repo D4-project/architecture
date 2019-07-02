@@ -11,6 +11,7 @@
 \usepackage{listings}
 \usepackage{tabularx}
 \usepackage{amsfonts}
+\usepackage{ulem}
 \usepackage{csquotes}
 \definecolor{main}{RGB}{47, 161, 219}
 \definecolor{background}{RGB}{240, 247, 255}
@@ -64,7 +65,7 @@
 
 \begin{frame}
 \frametitle{D4 Overview}
-        \includegraphics[scale=0.43]{../../diagram/mixing-d4-1.pdf}
+        \includegraphics[scale=0.46]{../../diagram/mixing-d4-1.pdf}
 \end{frame}
 
 
@@ -121,7 +122,7 @@ see \url{https://github.com/D4-Project}
                   \item [\checkmark] Passive SSL 
                   \item BGP mapping 
                   \item egress filtering mapping
-                  \item Radio-Spectrum monitoring: 802.11, BLE, etc. 
+                  \item Radio-Spectrum monitoring: 802.11, BLE, \sout{GSM}, etc. 
                   \item ...
                   \end{itemize}
 \end{frame}
@@ -457,8 +458,7 @@ The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and 
 \begin{frame}
   \frametitle{Future}
      \begin{itemize}
-     \item {\bf Mixing models for passive collection streams} (for privacy) in next version of D4 core server
-     \item {\bf Interconnecting private D4 sensor networks} with other D4 sensor networks (sharing to partners filtered stream)
+     \item {\bf Sensitive information sanitization} by specialized analyzers 
      \item {\bf Previewing datasets} collected in D4 sensor network and providing {\bf open data stream} (if contributor agrees to share under specific conditions)
      \item {\bf Leverage MISP sharing communities} to augment Threat
        Intelligence, and provide accurate metrology. 
@@ -468,11 +468,9 @@ The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and 
 \begin{frame}
 \frametitle{Use Cases}
 \begin{itemize}
-
 \item 
 \item 
 \item 
-
 \end{itemize}
 \end{frame}
 
