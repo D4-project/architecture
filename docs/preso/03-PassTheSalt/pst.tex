@@ -120,7 +120,7 @@ see \url{https://github.com/D4-Project}
                   \item [\checkmark] Blackhole DDoS
                   \item [\checkmark] Passive DNS 
                   \item [\checkmark] Passive SSL 
-                  \item \href{https://github.com/0xrawsec/gene}{Gene}/\href{https://github.com/0xrawsec/whids}{WHIDS} (sysmon)
+                  \item Gene\footnote{\url{https://github.com/0xrawsec/gene}} / WHIDS\footnote{\url{https://github.com/0xrawsec/whids}} (sysmon)
                   \item BGP mapping 
                   \item egress filtering mapping
                   \item Radio-Spectrum monitoring: 802.11, BLE, \sout{GSM}, etc. 
@@ -373,24 +373,10 @@ The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and 
     {\bf Passive SSL revamping}
   \end{center}
 \end{frame}
-       
-\begin{frame}
-        \frametitle{A passive SSL fingerprinter}
-        CSIRT's rationale for collecting TLS handshakes:
-        \begin{itemize}
-          \item {\bf pivot} on additional data points,
-          \item {\bf find} owners of IP addresses,
-          \item {\bf detect} usage of CIDR blocks,
-          \item {\bf detect} vulnerable systems,
-          \item {\bf detect} compromised services,
-          \item {\bf detect} key material reuse,
-          \item {\bf detect} weak keys.
-          \end{itemize}
-\end{frame}
 
 \begin{frame}
   \frametitle{Objectives - TLS Fingerprinting}
-        {\bf Keeping} a log of links between:
+        {\bf Keep} a log of links between:
         \begin{itemize}
           \item x509 certificates,
           \item ports,
@@ -401,6 +387,8 @@ The D4 server provides a {\bf web interface} to manage D4 sensors, sessions and 
         \begin{displayquote}
         ``JA3 is a method for creating SSL/TLS client fingerprints that should be easy to produce on any platform and can be easily shared for threat intelligence.''\footnote{https://github.com/salesforce/ja3}
         \end{displayquote}
+
+         {\bf Pivot} on additional data points during Incident Response 
 \end{frame}
 
 \begin{frame}
