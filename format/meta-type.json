@@ -1,0 +1,20 @@
+[
+  {
+    "type": "ja3-jl",
+    "description": "JA3 fingerprint JL version",
+    "ref": "https://github.com/D4-project/sensor-d4-tls-fingerprinting"
+  },
+  {
+    "type": "d4-telemetry",
+    "description": "D4 project sensor telemetry"
+  },
+  {
+    "type": "fascia",
+    "description": "FASCIA JSON Object"
+  },
+  {
+    "type": "maltrail",
+    "description": "Mailtrail logging",
+    "ref": "https://github.com/stamparm/maltrail"
+  }
+]
