@@ -54,4 +54,6 @@ the next packet to be decoded as type 254 in the stream. The JSON object MUST at
 | ja3-jl  | JA3 fingerprinting JL version |
 | d4-telemetry | D4 project sensor telemetry |
 | fascia       | fascia JSON object |
-| maltrail     | [mailtrail](https://github.com/stamparm/maltrail) logging |
+| maltrail     | [maltrail](https://github.com/stamparm/maltrail) logging |
+
+The D4 meta-type list is [available in JSON format](https://raw.githubusercontent.com/D4-project/architecture/master/format/meta-type.json).
