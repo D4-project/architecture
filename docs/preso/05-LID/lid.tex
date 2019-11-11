@@ -18,7 +18,7 @@
 \definecolor{textcolor}{RGB}{85, 87, 83}
 
 \title{Mind your Ps and Qs: }
-\subtitle{Performing crypto sanity checks with D4.}
+\subtitle{Performing crypto sanity checks with D4 project.}
 \author{Jean-Louis Huynen}
 \titlegraphic{\includegraphics[scale=0.20]{../../logos/d4-logo.pdf}}
 \institute{Team CIRCL \\ \url{https://www.d4-project.org/}}
@@ -75,13 +75,13 @@
 
 
 \begin{frame}
-  \frametitle{Snake Oil Crypto - Problem Statement}
+  \frametitle{Snake Oil Crypto\footnote{\url{https://github.com/d4-project/snake-oil-crypto}} - Problem Statement}
   IoT devices {\bf are often the weakest devices} on a network:
         \begin{itemize}
         \item Usually the result of cheap engineering,
         \item sloppy patching cycles,
         \item sometimes forgotten--not monitored,
-        \item few hardening features enabled,
+        \item few hardening features enabled.
         \end{itemize}
 
         \vspace{10 mm} 
@@ -122,13 +122,15 @@
           \item Small factors,
           \item Nonces reuse / common preffix or suffix, etc. 
         \end{itemize}
+        \vspace{5 mm}
+        {\bf Focus on low hanging fruits that appeal to attackers}
 \end{frame}
 
 
 \begin{frame}[fragile]
    \frametitle{Snake Oil Crypto - RSA on IoT }
-   Researchers have shown that several devices generated their public
-   keys at boot time without enough entropy\footnote{Bernstein, Heninger, and Lange: \url{http://facthacks.cr.yp.to/}}:
+   Researchers have shown that several devices generated their keypairs
+   at boot time without enough entropy\footnote{Bernstein, Heninger, and Lange: \url{http://facthacks.cr.yp.to/}}:
    
 \begin{lstlisting}[frame=single, language=python]
 prng.seed(seed)
@@ -139,7 +141,7 @@ n = p*q
 \end{lstlisting}
 
 Given n=pq and n' = pq' it is trivial to recover the shared p by computing their
-Greatest Common Divisor (GCD), and therefore both private keys\footnote{\url{http://www.loyalty.org/~schoen/rsa/}}.
+{\bf Greatest Common Divisor (GCD)}, and therefore {\bf both private keys}\footnote{\url{http://www.loyalty.org/~schoen/rsa/}}.
 
 \end{frame}
 
@@ -150,7 +152,7 @@ Greatest Common Divisor (GCD), and therefore both private keys\footnote{\url{htt
    \begin{itemize}
      \item between certificates having the same issuer,
      \item between certificates having the same subject,
-     \item on keys from various sources (PassiveSSL, Certificate Transparency,
+     \item on keys collected from various sources (PassiveSSL, Certificate Transparency,
        shodan, censys, etc.),
    \end{itemize}
 
@@ -170,7 +172,7 @@ Greatest Common Divisor (GCD), and therefore both private keys\footnote{\url{htt
 
 \begin{frame}
    \frametitle{Snake Oil Crypto - MISP feed}
-   The MISP feed
+   The MISP feed:
    \begin{itemize}
      \item {\bf Allows} for checking automatic checking by an IDS on hashed values,
      \item {\bf contains} thousands on broken keys from a dozen of vendors,
@@ -205,7 +207,7 @@ Greatest Common Divisor (GCD), and therefore both private keys\footnote{\url{htt
 \end{frame}
 
 \begin{frame}
-\frametitle{Use it}
+\frametitle{Use D4 !}
 \begin{itemize}
 \item {\bf Manage} your own sensors and servers, {\bf find} shameful bugs and
   {\bf fill} in github issues
