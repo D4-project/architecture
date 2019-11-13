@@ -111,20 +111,35 @@
 
         Grey Box - Attackers see cipher's implementation:
         \begin{itemize}
-          \item {\bf Side-Channel Attacks:} study the behavior of the implementation (eg. tpm-fail\cite{244048}),
+          \item {\bf Side-Channel Attacks:} study the behavior of the
+            implementation, for instance {\bf timing attacks }\footnote{\url{https://cryptojedi.org/peter/data/croatia-20160610.pdf}}:
+            \begin{itemize}
 
-            \vspace{10 mm}
+              \item Osvik, Shamir, Tromer~\cite{aes2006}: Recover AES-256 secret
+                key of Linux’s dmcrypt in just 65 ms
+              \item AlFardan, Paterson~\cite{lucky13}: “Lucky13” recovers plaintext of CBC-mode encryption in pretty much all TLS implementations
+              \item Yarom, Falkner~\cite{gpg2014}: Attack against RSA-2048 in GnuPG 1.4.13: “On average, the attack is able to recover 96.7\% of the bits of the secret key by observing a single signature or decryption round.”
+              \item Benger, van de Pol, Smart, Yarom~\cite{openssl2014}: “reasonable level of success in recovering the secret key” for OpenSSL ECDSA using secp256k1 “with as little as 200 signatures”
+
+            \end{itemize}
+
+        \framebreak
+        Most recent one: tpm-fail~\cite{244048}
+
+        \vspace{10 mm}
 
             \begin{figure}[h!]
               \includegraphics[width=200px]{./tpmfail.png}
             \end{figure}
+
+
 
         \framebreak
 
           \item {\bf Invasive Attacks:} 
 
             \begin{itemize}
-              \item injecting faults\cite{Matsuda2018},
+              \item injecting faults~\cite{Matsuda2018},
 
                 \vspace{10 mm}
 
@@ -132,10 +147,9 @@
                   \includegraphics[width=200px]{./faultInjection.png}
                 \end{figure}
 
-
         \framebreak
 
-              \item decapping chips\footnote{https://siliconpr0n.org/wiki/doku.php?id=decap:start}, reverse engineering\footnote{http://siliconzoo.org}\footnote{http://degate.org}, etc.
+              \item decapping chips~\footnote{~\url{https://siliconpr0n.org/wiki/doku.php?id=decap:start}}, reverse engineering~\footnote{~\url{http://siliconzoo.org}}~\footnote{~\url{http://degate.org}}, etc.
 
            \end{itemize}
  
@@ -147,11 +161,10 @@
                   \includegraphics[width=.49\textwidth]{./degate.png}
                 \end{figure}
 
-
 \end{frame}
 
 \begin{frame}
-        \frametitle{}
+        \frametitle{Semantic Security}
 
         \begin{itemize}
           \item
