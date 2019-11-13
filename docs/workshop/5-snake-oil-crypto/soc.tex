@@ -64,8 +64,7 @@
           \item {\bf Confidentiality }: Ensure the secrecy of the message except for
             the {\bf intended } recipient,
           \item {\bf Authentication }: Proving a party's identity,
-          \item {\bf Integrity }: Verifying that data transmitted were not altered in
-            the process,
+          \item {\bf Integrity }: Verifying that data transmitted were not altered,
           \item {\bf Non-repudiation }: Proving that the sender sent a given message.
         \end{itemize}
 
@@ -76,17 +75,8 @@
 
         \begin{itemize}
           \item {\bf In-transit encryption}: protects data while it is
-            transfered from one machine to another,
+            transferred from one machine to another,
           \item {\bf At-rest encryption}: protects data stored on one machine.
-        \end{itemize}
-
-\end{frame}
-
-\begin{frame}
-        \frametitle{Attack Models}
-
-        \begin{itemize}
-          \item
         \end{itemize}
 
 \end{frame}
@@ -94,21 +84,69 @@
 \begin{frame}
         \frametitle{Kerckhoffs's Principle}
 
-        \begin{itemize}
-          \item
-        \end{itemize}
+        \begin{quote}
+          It [cipher] should not require secrecy, and it should not be a problem if it falls into enemy hands.
+        \end{quote}
+
+        \vspace{10 mm}
+
+        { \bf There is no security in obscurity.}
 
 \end{frame}
 
 
-
-
-\begin{frame}
-        \frametitle{Security Notions}
-
+\begin{frame}[allowframebreaks]
+        \frametitle{Attackers model}
+        Black Box - Attackers may only see inputs / outputs:
         \begin{itemize}
-          \item
+          \item {\bf Ciphertext-Only Attackers (COA) :} see only the ciphertext,
+          \item {\bf Known-Plaintext Attackers (KPA):} see ciphertext and plaintext,
+          \item {\bf Chosen-Plaintext Attacker (CPA):} encrypt plaintext, and
+            see ciphertext, 
+          \item {\bf Chosen-Ciphertext Attakers (CCA):} encrypt plaintext,
+            decrypt ciphertext.
         \end{itemize}
+
+        \framebreak
+
+        Grey Box - Attackers see cipher's implementation:
+        \begin{itemize}
+          \item {\bf Side-Channel Attacks:} study the behavior of the implementation (eg. tpm-fail\cite{244048}),
+
+            \vspace{10 mm}
+
+            \begin{figure}[h!]
+              \includegraphics[width=200px]{./tpmfail.png}
+            \end{figure}
+
+        \framebreak
+
+          \item {\bf Invasive Attacks:} 
+
+            \begin{itemize}
+              \item injecting faults\cite{Matsuda2018},
+
+                \vspace{10 mm}
+
+                \begin{figure}[h!]
+                  \includegraphics[width=200px]{./faultInjection.png}
+                \end{figure}
+
+
+        \framebreak
+
+              \item decapping chips\footnote{https://siliconpr0n.org/wiki/doku.php?id=decap:start}, reverse engineering\footnote{http://siliconzoo.org}\footnote{http://degate.org}, etc.
+
+           \end{itemize}
+ 
+        \end{itemize}
+
+                \begin{figure}[h!]
+                  \includegraphics[width=.49\textwidth]{./decaping.jpg}%
+                  \hfill
+                  \includegraphics[width=.49\textwidth]{./degate.png}
+                \end{figure}
+
 
 \end{frame}
 
@@ -172,9 +210,9 @@
           \item client (ja3),
           \item server (ja3s),
         \end{itemize}
-        \begin{displayquote}
+        \begin{quote}
         ``JA3 is a method for creating SSL/TLS client fingerprints that should be easy to produce on any platform and can be easily shared for threat intelligence.''\footnote{https://github.com/salesforce/ja3}
-        \end{displayquote}
+        \end{quote}
 
          {\bf Pivot} on additional data points during Incident Response 
 \end{frame}
