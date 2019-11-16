@@ -97,7 +97,7 @@
 
 \begin{frame}[allowframebreaks]
         \frametitle{Attackers model}
-        Black Box - Attackers may only see inputs / outputs:
+        {\bf Black Box} - Attackers may only see inputs / outputs:
         \begin{itemize}
           \item {\bf Ciphertext-Only Attackers (COA) :} see only the ciphertext,
           \item {\bf Known-Plaintext Attackers (KPA):} see ciphertext and plaintext,
@@ -109,10 +109,10 @@
 
         \framebreak
 
-        Grey Box - Attackers see cipher's implementation:
+        {\bf Grey Box} - Attackers see cipher's implementation:
         \begin{itemize}
           \item {\bf Side-Channel Attacks:} study the behavior of the
-            implementation, for instance {\bf timing attacks }\footnote{\url{https://cryptojedi.org/peter/data/croatia-20160610.pdf}}:
+            implementation, eg. {\bf timing attacks }\footnote{\url{https://cryptojedi.org/peter/data/croatia-20160610.pdf}}:
             \begin{itemize}
 
               \item Osvik, Shamir, Tromer~\cite{aes2006}: Recover AES-256 secret
@@ -124,15 +124,13 @@
             \end{itemize}
 
         \framebreak
-        Most recent one: tpm-fail~\cite{244048}
+        Most recent timing attack: {\bf TPM-fail }~\cite{244048}
 
         \vspace{10 mm}
 
             \begin{figure}[h!]
-              \includegraphics[width=200px]{./tpmfail.png}
+              \includegraphics[width=250px]{./tpmfail.png}
             \end{figure}
-
-
 
         \framebreak
 
@@ -144,7 +142,7 @@
                 \vspace{10 mm}
 
                 \begin{figure}[h!]
-                  \includegraphics[width=200px]{./faultInjection.png}
+                  \includegraphics[width=250px]{./faultInjection.png}
                 \end{figure}
 
         \framebreak
@@ -164,13 +162,109 @@
 \end{frame}
 
 \begin{frame}
+        \frametitle{Security Notions}
+
+        \begin{itemize}
+          \item {\bf Indistinguishability (IND) :} Ciphertexts should be
+            indistinguishable from random strings,
+
+          \item {\bf Non-Malleability (MD):} ``Given a ciphertext $C_1 = E(K, P 1)$,
+it should be impossible to create another ciphertext, $C_2$ , whose corresponding
+plaintext, $P_2$ , is related to $P_1$ in a meaningful way.''
+
+        \end{itemize}
+
+        \vspace{1 mm}
+
+        Semantic Security (IND-CPA) is the most important security feature:
+        \begin{itemize}
+          \item Ciphertexts should be different when encryption is performed
+            twice on the same plaintext,
+          \item To achieve this, randomness is introduced into encryption /
+            decryption: 
+
+        \begin{itemize}
+          \item $C = E(P, K, R)$
+          \item $P = D(C, K, R)$
+        \end{itemize}
+
+        \end{itemize}
+       \end{frame}
+
+
+\begin{frame}
         \frametitle{Semantic Security}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{d4-ecb.pdf}
+        \end{figure}
+        
+\end{frame}
+
+
+\begin{frame}
+        \frametitle{Semantic Security}
+For instance AES-ECB is not semantically secure - An attacker can build a
+codebook to crack it.
+        No Semantic Security without randomness
 
         \begin{itemize}
           \item
         \end{itemize}
 
 \end{frame}
+
+\begin{frame}
+        \frametitle{Randomness}
+
+For instance AES-ECB is not semantically secure - An attacker can build a
+codebook to crack it.
+        No Semantic Security without randomness
+
+        \begin{itemize}
+          \item
+        \end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+        \frametitle{Generating Randomness}
+
+        Random Number Generator:
+        \begin{itemize}
+          \item
+        \end{itemize}
+
+        Pseudo Random Number Generator:
+        \begin{itemize}
+          \item
+        \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+        \frametitle{Entropy}
+
+        \begin{itemize}
+          \item
+        \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+        \frametitle{How thinks can go wrong}
+        Some attacks requires less than CCA / CPA:
+        \begin{itemize}
+          \item Side Channel attacks as for instance Padding Oracle (Vaudenay Attacks)
+        \end{itemize}
+
+\end{frame}
+
+
 
 
 \begin{frame}
