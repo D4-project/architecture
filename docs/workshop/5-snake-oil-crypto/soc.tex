@@ -77,6 +77,7 @@
           \item {\bf In-transit encryption}: protects data while it is
             transferred from one machine to another,
           \item {\bf At-rest encryption}: protects data stored on one machine.
+          %\item {\bf Perfect Forward Secrecy}
         \end{itemize}
 
 \end{frame}
@@ -217,16 +218,11 @@ codebook to crack it.
 \begin{frame}
         \frametitle{Randomness}
 
-For instance AES-ECB is not semantically secure - An attacker can build a
-codebook to crack it.
-        No Semantic Security without randomness
-
         \begin{itemize}
           \item
         \end{itemize}
 
 \end{frame}
-
 
 
 
@@ -256,6 +252,16 @@ codebook to crack it.
 \end{frame}
 
 \begin{frame}
+        \frametitle{Type of encryption}
+
+        \begin{itemize}
+          \item
+        \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
         \frametitle{How thinks can go wrong}
         Some attacks requires less than CCA / CPA:
         \begin{itemize}
@@ -263,6 +269,95 @@ codebook to crack it.
         \end{itemize}
 
 \end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Encryption and Law Enforcement}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+        \frametitle{2016 ENISA / EUROPOL joint statement}
+        \begin{itemize}
+          \item In the arms race between cryptographers and crypto-analysts. In
+            terms of practical breaks, cryptographers are miles ahead.
+          \item In a society that is ever more depending on the correct
+            functioning of electronic communication services, technical
+            protection of these service is mandatory,
+          \item In the face of serious crimes, law enforcement may lawfully
+            intrude privacy or break into security mechanisms of electronic communication,
+          \item {\bf proportionality} - collateral damages (class breaks)
+          \item Resolving the encryption dilemma: collect and share best
+            practices to circumvent encryption.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+        \frametitle{Encryption Workarounds~\cite{kerr2017}}
+        \begin{quote}
+          Any effort to reveal an unencrypted version of a target's data that
+          has been concealed be encryption.
+        \end{quote}
+        \begin{itemize}
+          \item Try to get the key:
+          \begin{itemize}
+        \item {\bf Find the key:} 
+          \begin{itemize}
+          \item physical searches for keys,
+          \item password managers,
+          \item web browser password database,
+          \item in-memory copy of the key in computer's HDD / RAM.
+          \item seize the key (keylogger).
+          \end{itemize}
+        \item {\bf Guess the key:},
+          \begin{itemize}
+            \item Whereas encryption keys are usually too hard to guess (but more on that
+              later...),
+            \item passphrases are usually shorter to be memorizable, and are
+              linked to the key,
+            \item some systems have limitations on sorts of passwords (eg. 4/6
+              digits banking application),
+            \item educated guess on the password from context,
+            \item educated guess from owner's other passwords,
+            \item dictionaries and password generation rules (\footnote{\url{https://hashcat.net/hashcat/}}).
+            \item Offline / online attacks (eg. 13 digits pw: 25.000 on an
+              iphone VS matter of minutes offline),
+            \item + beware devices protection when online (eg. iphone erase on failure).
+          \end{itemize}
+         
+        \item {\bf Compel the key:}
+\begin{figure}
+\centering
+\includegraphics[width=180px]{security.png}
+\end{figure}
+          \end{itemize}
+          \item Try to access the PlaintText without the key:
+          \begin{itemize}
+        \item Exploit a Flaw,
+        \item Access Plaintext when in use,
+        \item Locate Plaintext copy
+          \end{itemize}
+       \end{itemize}
+       {\bf No workaround works every time.}
+
+        \framebreak
+
+      In short, crypto-systems have weaknesses:
+      \begin{itemize}
+        \item key generation,
+        \item key length,
+        \item key distribution,
+        \item key storage,
+        \item how users enter keys into the crypto-system,
+        \item weakness in the algorithm itself / implementation,
+        \item system / computer running the algorithm,
+        \item crypto system used in different points in time,
+        \item {\bf users.}
+      \end{itemize}
+
+       
+\end{frame}
+
 
 
 
