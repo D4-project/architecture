@@ -252,6 +252,17 @@ codebook to crack it.
 \end{frame}
 
 \begin{frame}
+        \frametitle{Quantifying Security}
+       RSA 2048 is roughly 100 bits security. 
+        \begin{itemize}
+          \item 
+        \end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
         \frametitle{Type of encryption}
 
         \begin{itemize}
@@ -296,10 +307,10 @@ codebook to crack it.
         \frametitle{Encryption Workarounds~\cite{kerr2017}}
         \begin{quote}
           Any effort to reveal an unencrypted version of a target's data that
-          has been concealed be encryption.
+          has been concealed by encryption.
         \end{quote}
         \begin{itemize}
-          \item Try to get the key:
+          \item {\bf Try to get the key:}
           \begin{itemize}
         \item {\bf Find the key:} 
           \begin{itemize}
@@ -311,8 +322,8 @@ codebook to crack it.
           \end{itemize}
         \item {\bf Guess the key:},
           \begin{itemize}
-            \item Whereas encryption keys are usually too hard to guess (but more on that
-              later...),
+            \item Whereas encryption keys are usually too hard to guess (eg.
+              128bits security is $2^{128}$ trials (universe is $2^{88}$ ns old)),
             \item passphrases are usually shorter to be memorizable, and are
               linked to the key,
             \item some systems have limitations on sorts of passwords (eg. 4/6
@@ -322,27 +333,71 @@ codebook to crack it.
             \item dictionaries and password generation rules (\footnote{\url{https://hashcat.net/hashcat/}}).
             \item Offline / online attacks (eg. 13 digits pw: 25.000 on an
               iphone VS matter of minutes offline),
-            \item + beware devices protection when online (eg. iphone erase on failure).
+            \item + beware devices protection when online (eg. iphone erase on repeated failures).
           \end{itemize}
          
         \item {\bf Compel the key:}
-\begin{figure}
-\centering
-\includegraphics[width=180px]{security.png}
-\end{figure}
-          \end{itemize}
-          \item Try to access the PlaintText without the key:
-          \begin{itemize}
-        \item Exploit a Flaw,
-        \item Access Plaintext when in use,
-        \item Locate Plaintext copy
-          \end{itemize}
-       \end{itemize}
-       {\bf No workaround works every time.}
+          \begin{figure}
+            \centering
+            \includegraphics[width=180px]{security.png}
+          \end{figure}
+        \end{itemize}
 
+          \item {\bf Try to access the PlainText without the key:}
+
+        \begin{itemize}
+          \item {\bf Exploit a Flaw:}
+
+            \begin{itemize}
+              \item Weakness in the algorithm (more on that later),
+              \item weakness in the random-number generator (more on that later),
+              \item weakness in the implementation,
+              \item bugs (eg. Gordon's exploit on android in
+                2015\footnote{\url{https://cve.circl.lu/cve/CVE-2015-3860}}),
+              \item backdoors (eg. NSA NOBUS -Bullrun program- Dual EC-DRBG~\cite{eprint-2015-26238}
+            \end{itemize}
+
+          \item {\bf Access PlainText when in use:}
+
+            \begin{itemize}
+              \item Access live system memory,
+              \item especially useful against Full Disk Encryption,
+              \item Seize device while in use,
+              \item remotely hack the device,
+              \item ``Network Investigative Technique'' (eg. Playpen case
+                against tor).
+            \end{itemize}
+
+\pagebreak 
+
+          \item {\bf Locate a PlainText copy:}
+
+            \begin{itemize}
+              \item Avoid encryption entirely,
+              \item cloud providers (eg. emails),
+              \item remote cloud storage (eg. iCloud),
+            \end{itemize}
+ 
+        \end{itemize}
+
+       \end{itemize}
+
+      \vspace{5mm}
+
+       {\bf Takeaways:}
+       \begin{itemize}
+        \item {\bf No workaround works every time:}  the fact that a target used
+          encryption does not mean that the investigation is over.
+        \item {\bf some workarounds are expensive:} exploiting.
+        \item {\bf expertise may be have to be found outside of the
+            governments:} vendors' assistance?
+       \end{itemize}
+
+ 
         \framebreak
 
-      In short, crypto-systems have weaknesses:
+      Technically, we can retain that crypto-systems have weaknesses:
+
       \begin{itemize}
         \item key generation,
         \item key length,
