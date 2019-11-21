@@ -1,6 +1,7 @@
 \documentclass{beamer}
 \usetheme[numbering=progressbar]{focus}
 \usepackage{tikz}
+\usepackage{listings}
 \usetikzlibrary{positioning}
 \usetikzlibrary{shapes,arrows}
 \usepackage{transparent}
@@ -198,6 +199,7 @@ plaintext, $P_2$ , is related to $P_1$ in a meaningful way.''
         \begin{figure}
           \centering
           \includegraphics[width=\textwidth]{d4-ecb.pdf}
+          \caption{Image encrypted with AES-ECB}
         \end{figure}
         
 \end{frame}
@@ -205,13 +207,19 @@ plaintext, $P_2$ , is related to $P_1$ in a meaningful way.''
 
 \begin{frame}
         \frametitle{Semantic Security}
-For instance AES-ECB is not semantically secure - An attacker can build a
-codebook to crack it.
-        No Semantic Security without randomness
+
+        IND-CPA should not leak information about the PlainText as long as the
+        key is secret:
 
         \begin{itemize}
-          \item
+          \item $C^1 = E(K, P^1)$, $C^2 = E(K, P^2)$, what are the couples?
+          \item the same message encrypted twice should return two different CipherText,
+          \item one way to achieve this is to introduce randomness in the
+            encryption process: $C = E(K ,R ,P )$ where R is fresh random bits,
+          \item C should not be distinguishable from random bits.
         \end{itemize}
+
+        {\bf No Semantic Security without randomness}
 
 \end{frame}
 
@@ -261,12 +269,12 @@ codebook to crack it.
 \end{frame}
 
 
-
 \begin{frame}
         \frametitle{Type of encryption}
 
         \begin{itemize}
-          \item
+          \item Symmetric encryption,
+          \item Asymmetric encryption.
         \end{itemize}
 
 \end{frame}
@@ -413,15 +421,86 @@ codebook to crack it.
        
 \end{frame}
 
+\begin{frame}
+        \frametitle{When cryptography helps investigations}
+        \begin{itemize}
+          \item crypto provides authentication mechanisms.
+          \item
+          \item
+          \item
+        \end{itemize}
 
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Hands-on: Understanding RSA}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{With only one key}
+  Several potential weaknesses:
+  \begin{itemize}
+    \item Key size too small: keys up to 1024 bits are breakable given the
+      right means,
+    \item  
+    \item
+    \item
+    \item
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{With a bunch of  keys}
+\end{frame}
 
 
 
 \begin{frame}
   \begin{center}
-    {\bf Cryptography and Network captures}
+    {\bf Hands-on: Exploiting Weaknesses in RSA}
   \end{center}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Using Sage}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Breaking small keys}
+  \begin{itemize}
+  \item Go into:
+
+\begin{lstlisting}
+~/smallKey
+\end{lstlisting}
+
+   \item what is the key size of smallkey?
+   \item what is n?
+   \item what is the public exponent?
+   \item what is n in base10?
+   \item what are p and q?
+   
+  \end{itemize}
+
+  \vspace{8mm}
+  {\bf Let's generate the private key.}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Using Snake-Oil-Crypto}
+\end{frame}
+
+
+
+
+
+
 
 \begin{frame}
   \begin{center}
