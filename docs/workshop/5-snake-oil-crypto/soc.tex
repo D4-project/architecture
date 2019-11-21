@@ -28,10 +28,13 @@
 
         \begin{itemize}
           \item Cryptography 101,
-          \item Cryptography and Network captures,
+          \item Encryption an Law Enforcement,
+          \item Use-Case: RSA,
+          \item First Hands-on: Understanding RSA,
+          \item Snake-Oil-Crypto: a primer,
+          \item Second Hands-on: RSA in Snake-Oil-Crypto,
           \item D4 passiveSSL Collection,
-          \item Leveraging OpenPGP metedata,
-          \item Checking for weak crypto.
+          \item Interactions with MISP.
         \end{itemize}
 
 \end{frame}
@@ -444,20 +447,24 @@ plaintext, $P_2$ , is related to $P_1$ in a meaningful way.''
   \begin{itemize}
     \item Key size too small: keys up to 1024 bits are breakable given the
       right means,
-    \item  
-    \item
-    \item
-    \item
+    \item close p and q,
+    \item unsafe primes, smooth primes,
+    \item broken primes (FactorDB, Debian OpenSSL bug).
   \end{itemize}
 
 \end{frame}
 
-
 \begin{frame}
-  \frametitle{With a bunch of  keys}
+  \frametitle{With a set of  keys}
+  Several potential weaknesses:
+  \begin{itemize}
+   \item share moduli: if n1 = n2 then the keys share p and q,
+   \item share p or q,
+  \end{itemize}
+ \vspace{10mm}
+  {\bf In both case, it is trivial to recover the private keys.}
+
 \end{frame}
-
-
 
 \begin{frame}
   \begin{center}
@@ -470,7 +477,7 @@ plaintext, $P_2$ , is related to $P_1$ in a meaningful way.''
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Breaking small keys}
+  \frametitle{Breaking small keys\footnote{https://www.sjoerdlangkemper.nl/2019/06/19/attacking-rsa/}}
   \begin{itemize}
   \item Go into:
 
@@ -487,36 +494,45 @@ plaintext, $P_2$ , is related to $P_1$ in a meaningful way.''
   \end{itemize}
 
   \vspace{8mm}
-  {\bf Let's generate the private key.}
+  {\bf Let's generate the private key: }using p, then using q.
   
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Close Prime Factors}
+  \begin{itemize}
+  \item Go into:
+\begin{lstlisting}
+~/ClosePQ
+\end{lstlisting}
 
-\begin{frame}
-  \frametitle{Using Snake-Oil-Crypto}
+   \item use Fermat Algorithm\footnote{\url{http://facthacks.cr.yp.to/fermat.html}} to find {\bf both p and q:}
+
+\begin{lstlisting}
+def fermatfactor(N):
+  if N <= 0: return [N]
+  if is_even(N): return [2,N/2]
+  a = ceil(sqrt(N))
+  while not is_square(a^2-N):
+    a = a + 1
+  b = sqrt(a^2-N)
+  return [a - b,a + b]
+\end{lstlisting}
+
+  \end{itemize}
+ 
 \end{frame}
 
 
 
-
-
-
-
 \begin{frame}
-  \begin{center}
-    {\bf D4 passiveSSL Collection}
-  \end{center}
+  \frametitle{Shared prime factors}
 \end{frame}
 
 \begin{frame}
   \begin{center}
-    {\bf Leveraging OpenPGP metedata}
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \begin{center}
-    {\bf Checking for weak crypto}
+    {\bf Hands-on: Exploiting Weaknesses in RSA}\\
+    {\bf -- at bigger scale --}\\
   \end{center}
 \end{frame}
 
@@ -653,6 +669,26 @@ Given n=pq and n' = pq' it is trivial to recover the shared p by computing their
 \end{frame}
 
 
+\begin{frame}
+  \frametitle{PassiveSSL}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Using Snake-Oil-Crypto}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Leveraging OpenPGP metedata}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    {\bf Checking for weak crypto}
+  \end{center}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Get in touch if you want to join/support the project, host a passive ssl sensor or contribute}
@@ -662,6 +698,8 @@ Given n=pq and n' = pq' it is trivial to recover the shared p by computing their
 \item \url{https://github.com/D4-Project} -  \url{https://twitter.com/d4_project}
 \end{itemize}
 \end{frame}
+
+
 
 \nocite{*} 
 \begin{frame}[allowframebreaks]
