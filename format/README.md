@@ -1,4 +1,4 @@
-# D4 encapsulation protocol version 1 (DRAFT)
+# D4 encapsulation protocol version 1
 
 ![Overview of the D4 encapsulation protocol](https://raw.githubusercontent.com/D4-project/architecture/master/docs/diagram/d4-protocol-encapsulation.png)
 
