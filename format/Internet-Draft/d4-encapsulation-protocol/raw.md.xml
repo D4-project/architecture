@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- name="GENERATOR" content="github.com/mmarkdown/mmark Mmark Markdown Processor - mmark.miek.nl" -->
+<rfc version="3" ipr="trust200902" docName="draft-01" submissionType="independent" category="info" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" indexInclude="true">
+
+<front>
+<title abbrev="D4 Encapsulation Protocol">D4 Encapsulation Protocol</title><seriesInfo value="draft-01" stream="independent" status="informational" name="Internet-Draft"></seriesInfo>
+<author initials="A." surname="Dulaunoy" fullname="Alexandre Dulaunoy"><organization abbrev="CIRCL">Computer Incident Response Center Luxembourg</organization><address><postal><street>122, rue Adolphe Fischer</street>
+<city>Luxembourg</city>
+<code>L-1521</code>
+<country>Luxembourg</country>
+</postal><phone>+352 247 88444</phone>
+<email>alexandre.dulaunoy@circl.lu</email>
+</address></author><date/>
+<area>Security</area>
+<workgroup></workgroup>
+
+<abstract>
+<t>This document describes the D4 encapsulation protocol, a protocol for encapsulating various types of security data for transmission. The protocol includes a header format, a set of defined data types, and a mechanism for extending the protocol with meta-types.</t>
+<t>This document describes the D4 encapsulation protocol, designed to be a lightweight solution for streaming the collection of various data types. Its core design principles are to enable the creation of dedicated sensor networks with a minimal architecture, to support a wide variety of sensor types (software, hardware, or virtual) through a simple software stack, and to provide an all-in-one open-source solution with minimal dependencies. The protocol also supports information sharing capabilities to interconnect different D4 sensor networks and includes a set of default configurations for common monitoring tasks like Passive DNS collection, network flow, packet capture and DDoS backscatter analysis. This document details the protocol's header format, data types, and extension mechanisms.</t>
+</abstract>
+
+</front>
+
+<middle>
+
+<section anchor="d4-encapsulation-protocol"><name>D4 Encapsulation Protocol</name>
+
+<section anchor="introduction"><name>Introduction</name>
+<t>This document specifies the D4 encapsulation protocol. The protocol is designed to be a flexible and extensible way to transport different kinds of security-related data, such as network captures, log files, and sensor telemetry.</t>
+</section>
+
+<section anchor="conventions-and-terminology"><name>Conventions and Terminology</name>
+<t>The key words &quot;<bcp14>MUST</bcp14>&quot;, &quot;<bcp14>MUST NOT</bcp14>&quot;, &quot;<bcp14>REQUIRED</bcp14>&quot;, &quot;<bcp14>SHALL</bcp14>&quot;, &quot;<bcp14>SHALL NOT</bcp14>&quot;,
+&quot;<bcp14>SHOULD</bcp14>&quot;, &quot;<bcp14>SHOULD NOT</bcp14>&quot;, &quot;<bcp14>RECOMMENDED</bcp14>&quot;, &quot;<bcp14>MAY</bcp14>&quot;, and &quot;<bcp14>OPTIONAL</bcp14>&quot; in this
+document are to be interpreted as described in RFC 2119 <xref target="RFC2119"></xref>.</t>
+</section>
+
+<section anchor="d4-packet-header"><name>D4 Packet Header</name>
+<t>The D4 packet header is a fixed-size header that precedes the encapsulated data.</t>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>bit size</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>version</td>
+<td>uint 8</td>
+<td align="center">Version of the header</td>
+</tr>
+
+<tr>
+<td>type</td>
+<td>uint 8</td>
+<td align="center">Data encapsulated type</td>
+</tr>
+
+<tr>
+<td>uuid</td>
+<td>uint 128</td>
+<td align="center">Sensor UUID</td>
+</tr>
+
+<tr>
+<td>timestamp</td>
+<td>uint 64</td>
+<td align="center">Encapsulation time</td>
+</tr>
+
+<tr>
+<td>hmac</td>
+<td>uint 256</td>
+<td align="center">Authentication header (HMAC-SHA-256-128)</td>
+</tr>
+
+<tr>
+<td>size</td>
+<td>uint 32</td>
+<td align="center">Payload size</td>
+</tr>
+</tbody>
+</table></section>
+
+<section anchor="d4-packet-types"><name>D4 Packet Types</name>
+<t>The <tt>type</tt> field in the D4 header indicates the format of the encapsulated data. The following types are defined:</t>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0</td>
+<td align="left">Reserved</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td align="left">pcap (libpcap 2.4)</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td align="left">meta header (JSON)</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td align="left">generic log line</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td align="left"><eref target="https://github.com/DNS-OARC/dnscap">dnscap</eref> output</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td align="left">pcapng (diagnostic)</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td align="left">generic NDJSON or JSON Lines</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td align="left"><eref target="https://tools.netsa.cert.org/yaf/index.html">YAF</eref> (Yet Another Flowmeter)</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td align="left"><eref target="https://github.com/gamelinux/passivedns">passivedns</eref> CSV stream</td>
+</tr>
+
+<tr>
+<td>254</td>
+<td align="left">type defined by meta header (type 2)</td>
+</tr>
+</tbody>
+</table><t>A full list of D4 types is available in JSON format at <eref target="https://raw.githubusercontent.com/D4-project/architecture/master/format/type.json">https://raw.githubusercontent.com/D4-project/architecture/master/format/type.json</eref>.</t>
+</section>
+
+<section anchor="meta-header"><name>Meta Header</name>
+<t>The meta header provides a mechanism to extend the D4 protocol with new data types. When a new session is initiated, a packet with <tt>type</tt> 2 (meta header) MUST be sent to the D4 server to describe how to decode subsequent packets. The payload of the meta header is a single JSON object.</t>
+
+<section anchor="meta-header-fields"><name>Meta Header Fields</name>
+<t>The JSON object in the meta header payload MUST contain a <tt>type</tt> field.</t>
+<t>Here is an example of a meta header JSON object:</t>
+
+<sourcecode type="json"><![CDATA[{
+  "type": "ja3-jl",
+  "encoding": "utf-8",
+  "tags": [
+    "tlp:white"
+  ],
+  "misp:org": "5b642239-4db4-4580-adf4-4ebd950d210f"
+}
+]]>
+</sourcecode>
+</section>
+
+<section anchor="meta-types"><name>Meta Types</name>
+<t>The following meta-types are defined:</t>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ja3-jl</td>
+<td align="left">JA3 fingerprinting JL version</td>
+</tr>
+
+<tr>
+<td>d4-telemetry</td>
+<td align="left">D4 project sensor telemetry</td>
+</tr>
+
+<tr>
+<td>fascia</td>
+<td align="left">fascia JSON object</td>
+</tr>
+
+<tr>
+<td>maltrail</td>
+<td align="left"><eref target="https://github.com/stamparm/maltrail">maltrail</eref> logging</td>
+</tr>
+</tbody>
+</table><t>A full list of D4 meta-types is available in JSON format at <eref target="https://raw.githubusercontent.com/D4-project/architecture/master/format/meta-type.json">https://raw.githubusercontent.com/D4-project/architecture/master/format/meta-type.json</eref>.</t>
+</section>
+</section>
+
+<section anchor="security-considerations"><name>Security Considerations</name>
+<t>The D4 protocol includes an <tt>hmac</tt> field in the header for authentication. Implementers should ensure that strong keys are used and that the HMAC verification is performed correctly to prevent spoofing and data tampering.</t>
+</section>
+
+<section anchor="iana-considerations"><name>IANA Considerations</name>
+<t>This document does not require any IANA actions.</t>
+</section>
+
+<section anchor="references"><name>References</name>
+</section>
+</section>
+
+</middle>
+
+<back>
+<references><name>Normative References</name>
+<xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+</references>
+
+</back>
+
+</rfc>
